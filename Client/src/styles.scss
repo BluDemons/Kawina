@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "../src/app/sass/bootstrap/variables";
+@import "./src/app/sass/bootstrap/mixins";
+
+// Reset and dependencies
+@import "../src/app/sass/bootstrap/normalize";
+@import "../src/app/sass/bootstrap/print";
+//@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "../src/app/sass/bootstrap/scaffolding";
+@import "../src/app/sass/bootstrap/type";
+@import "../src/app/sass/bootstrap/code";
+@import "../src/app/sass/bootstrap/grid";
+@import "../src/app/sass/bootstrap/tables";
+@import "../src/app/sass/bootstrap/forms";
+@import "../src/app/sass/bootstrap/buttons";
+
+// Components
+@import "../src/app/sass/bootstrap/component-animations";
+@import "../src/app/sass/bootstrap/dropdowns";
+@import "../src/app/sass/bootstrap/button-groups";
+@import "../src/app/sass/bootstrap/input-groups";
+@import "../src/app/sass/bootstrap/navs";
+@import "../src/app/sass/bootstrap/navbar";
+@import "../src/app/sass/bootstrap/breadcrumbs";
+@import "../src/app/sass/bootstrap/pagination";
+@import "../src/app/sass/bootstrap/pager";
+@import "../src/app/sass/bootstrap/labels";
+@import "../src/app/sass/bootstrap/badges";
+@import "../src/app/sass/bootstrap/jumbotron";
+@import "../src/app/sass/bootstrap/thumbnails";
+@import "../src/app/sass/bootstrap/alerts";
+@import "../src/app/sass/bootstrap/progress-bars";
+@import "../src/app/sass/bootstrap/media";
+@import "../src/app/sass/bootstrap/list-group";
+@import "../src/app/sass/bootstrap/panels";
+@import "../src/app/sass/bootstrap/responsive-embed";
+@import "../src/app/sass/bootstrap/wells";
+@import "../src/app/sass/bootstrap/close";
+
+// Components w/ JavaScript
+@import "../src/app/sass/bootstrap/modals";
+@import "../src/app/sass/bootstrap/tooltip";
+@import "../src/app/sass/bootstrap/popovers";
+@import "../src/app/sass/bootstrap/carousel";
+
+// Utility classes
+@import "../src/app/sass/bootstrap/utilities";
+@import "../src/app/sass/bootstrap/responsive-utilities";

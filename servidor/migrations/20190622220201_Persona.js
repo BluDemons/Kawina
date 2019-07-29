@@ -10,7 +10,6 @@ exports.up = function(knex, Promise) {
         table.string('direccionDomiciliaria');
         table.string('correoElectronico');
         table.string('contraseña');
-        table.integer('idTipoPersona').references('id').inTable('tipoPersona');
        }),
     ])
 };

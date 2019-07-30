@@ -1,34 +1,16 @@
-.navegacion{
-    position: fixed;
-    height: 50px;
-    overflow: hidden;
-    display: flex;
-    top: 0;
-    left: 0;
-    align-items: center;
-    background: #20B2AA;
-    width: 100%;
-  }
-  .menu{
-    position: absolute;
-    right: 20px;
-  }
-  .menu a{
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    margin-left: 20px;
-    transition: color 0.3s;
-    text-transform: uppercase;
-  }
-  .menu a:hover{
-    color: #ff0033;
-  }
+@import '../../sass/variables';
+@import '../../sass/mixins';
 
-body { 
-    background:black; 
- }
- * {box-sizing:border-box}
+#section-1{
+  @include bg_covertint ($r_blanco,$g_blanco,$b_blanco,$r_turquesa,$g_turquesa,$b_turquesa,$alpha_cover,$picture-dashboard);
+  height: 100vh;
+  top: 50;
+  color: $blanco;
+  h1{
+      margin-bottom: 30px;
+  }
+}
+* {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {

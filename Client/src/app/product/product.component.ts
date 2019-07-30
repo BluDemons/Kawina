@@ -19,9 +19,8 @@ export class ProductComponent implements OnInit {
         id: 'id',
         nombre: 'nombre',
         descripcion: 'descripcion',
-        precio: 'precio'
-        // imagen: 'imagen',
-        // archivo:'archivo'
+        precio: 'precio',
+        imagen: 'imagen',
       }
     ]
   }

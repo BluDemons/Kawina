@@ -13,8 +13,8 @@ const routes: Routes = [
   {path: 'empresa', component:AboutComponent},
   {path:'contact', component:ContactComponent},
   {path:'product', component:ProductComponent},
-  {path:'services', component:ServicesComponent},
-  {path:'single', component:SingleComponent}
+  {path:'consultoria', component:ServicesComponent},
+  {path:'patronaje', component:SingleComponent}
 ];
 
 @NgModule({

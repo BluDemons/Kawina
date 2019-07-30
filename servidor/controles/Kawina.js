@@ -11,7 +11,6 @@ db.select(campo).from(tabla)
        return res.status(200).json({
         ok:true,
         data:response,
-        mesaje:`existen ${response.length} datos`
       })
     })
     .catch(error=>{

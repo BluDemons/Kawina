@@ -1,15 +1,16 @@
 ul {
     list-style-type:none;
-    margin: 0;
+    position: fixed;
+    height: 50px;
     overflow: hidden;
-    background: rgba(76, 175, 80, 0.1);
-    background-color: #333;
-    div.navbar{
-        margin-right: 10%;
-        margin-left: 10%;
-        padding: 0;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    background:rgba(17, 16, 16, 0.877);
+    width: 100%;
         li {
-            float: right;
+            float: left;
           }
           
           li a, .dropbtn {
@@ -18,10 +19,11 @@ ul {
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            text-transform: uppercase;
           }
           
           li a:hover, .dropdown:hover .dropbtn {
-            background-color: red;
+            background-color: #f03033;
           }
           li.dropdown {
             display: inline-block;
@@ -50,7 +52,7 @@ ul {
             display: block;
             text-align: left;
         }  
-      }  
+       
     }
 
       

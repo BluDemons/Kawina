@@ -1,21 +1,14 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.10s;
-    width: 80%;
+  .card1{
+    @mixin gridImagenes($cantidad, $margin) {//para definir cantidad de imagenes y adecuarles en el espacio
+      width: ((100% - (($cantidad - 1) * $margin))/$cantidad);
+      &:nth-child(n) {
+        margin-right: $margin;
+        margin-bottom: $margin;
+      }
+      &:nth-child(#{$cantidad}n + 1) {
+      margin-right:0;
+       margin-bottom: 0;
+     }
   }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(228, 9, 9, 0.2);
-  }
-  
-  .container {
-    padding: 2px 16px;
-  }
-  #page{
-    margin-left: 12%;
-  }
-  .titutlo{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 200%;
-    color: #000000;
-  }
+    @include gridImagenes(4,5%); 
+}

@@ -10,21 +10,13 @@ import { environment } from '../../environments/environment';
 export class ProductComponent implements OnInit {
   response: any[]
   table_header: any
-agregar:[]
+agregar:any[]
 
   constructor(private http: HttpClient, ) { }
 
   ngOnInit() {
     this.getData()
-    this.table_header = [
-      {
-        id: 'id',
-        nombre: 'nombre',
-        descripcion: 'descripcion',
-        precio: 'precio',
-        imagen: 'imagen',
-      }
-    ]
+
   }
 
   getData=()=>{
@@ -35,17 +27,18 @@ agregar:[]
             console.log(this.response)
         })
   }
-carrito(){
-this.response
-.forEach(element => {
-  this.agregar=(element)
+ carrito(id){
+ this.response.forEach(element => {
+   if(element.id==id){
+  this.agregar=element
   console.log(this.agregar)
-});
+  }
+ });
 }
-// total(){
+// total(){  
 //   var total:0;
-//   for(let item of this.agregar){
-// total+=item;
+//   for(let precio of this.agregar){
+//    total+=precio;
 //   }
 //   return total;
 // }

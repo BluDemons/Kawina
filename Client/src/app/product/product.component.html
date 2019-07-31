@@ -1,32 +1,31 @@
-
 <div class="bd-example">
-				<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-				  <ol class="carousel-indicators">
-					<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-				  </ol>
-				  <div class="carousel-inner">
-					<div class="carousel-item">
-					  <img src="../../assets/img_bg_2.jpg" class="d-block w-100" alt="...">
-					  <div class="carousel-caption d-none d-md-block">
-					  </div>
-					</div>
-				  </div>
+	<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item">
+				<img src="../../assets/img_bg_2.jpg" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
 				</div>
-			  </div>		  
-	<!-- <h1>division de la imagen y el resto de la pantalla</h1> -->
-	<h4>Productos En venta</h4>
-	<div>
-		<div *ngFor="let item of response" >
-					<div>
-						<div>
-						<div>
-							<h4 class="card-title">Nombre: {{item.nombre}}</h4>
-							<h4 class="card-title">Precio: {{item.precio}}</h4>
-							<img  src="{{item.imagen}}"
-								alt="Avatar">
-							<h4 class="texto">Descripción: {{item.descripcion}}</h4>
-							<button (click)="carrito()" class="btn">Añadir al carrito</button>
-							<br>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <h1>division de la imagen y el resto de la pantalla</h1> -->
+<h1>Productos En venta</h1>
+<div>
+	<div *ngFor="let item of response;let i=index">
+		<div>
+			<div>
+				<div>
+					<h1>{{item.id}}</h1>
+					<h4 class="card-title">Nombre: {{item.nombre}}</h4>
+					<h4 class="card-title">Precio: {{item.precio}}</h4>
+					<img src="{{item.imagen}}">
+					<h4 class="texto">Descripción: {{item.descripcion}}</h4>
+					<button (click)="carrito(item.id)" class="btn">Añadir al carrito</button>
+					<br>
 				</div>
 			</div>
 		</div>
@@ -36,9 +35,9 @@
 <div class="col-sm-3 carrito">
 	<h4><i class="fa fa-shopping-cart"></i> Carrito De Compras </h4>
 	<ul class="list-group">
-		<li class="list-group-item" *ngFor="let item of ">
+		<li class="list-group-item" *ngFor="let item of">
 			{{item.nombre}}
-			<strong class="pull-right"> {{item.precio}} │ currenci</strong>
+			<strong class="pull-right"> {{item.precio}}</strong>
 		</li>
 	</ul>
 	<!-- <h2>TOTAL: {{total()}}</h2> -->

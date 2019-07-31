@@ -15,25 +15,25 @@
 			  </div>		  
 	<!-- <h1>division de la imagen y el resto de la pantalla</h1> -->
 	<h4>Productos En venta</h4>
-	<div class="card1">
+	<div>
 		<div *ngFor="let item of response" >
-			<div>
-				<div class="col-sm-4">
 					<div>
-						<div class="card-header btn-flat"># {{item.id}}</div>
-						<div class="card-body">
+						<div># {{item.id}}
+						<div>
 							<h4 class="card-title">Nombre: {{item.nombre}}</h4>
 							<h4 class="card-title">Precio: {{item.precio}}</h4>
+							<div>
 							<img  src="{{item.imagen}}"
 								alt="Avatar">
 							<h4 class="texto">Descripción: {{item.descripcion}}</h4>
-						</div>
+							<a href="" class="btn">Añadir al carrito</a>
+							<br>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+</div>
 
 
 <!-- <div>

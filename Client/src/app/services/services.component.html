@@ -1,0 +1,37 @@
+<!-- consultoria -->
+<div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="../../assets/img_bg_4.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+		<div *ngFor="let item of response" >
+					<div>
+						<div># {{item.id}}
+						<div>
+							<h4 class="card-title">Nombre: {{item.nombre}}</h4>
+                            <h4 class="card-title">Precio: {{item.precio}}</h4>
+                            <h4 class="card-title">Precio: {{item.descripcion}}</h4>
+                            <a class="card-title"href=" {{item.urlArchivo}}" >descargar:</a>
+							<div>
+							<img  src="{{item.imagen}}"
+								alt="Avatar">
+							<a href="" class="btn">Añadir al carrito</a>
+							<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

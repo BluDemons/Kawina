@@ -1,14 +1,23 @@
-  .card1{
-    @mixin gridImagenes($cantidad, $margin) {//para definir cantidad de imagenes y adecuarles en el espacio
-      width: ((100% - (($cantidad - 1) * $margin))/$cantidad);
-      &:nth-child(n) {
-        margin-right: $margin;
-        margin-bottom: $margin;
-      }
-      &:nth-child(#{$cantidad}n + 1) {
-      margin-right:0;
-       margin-bottom: 0;
-     }
-  }
-    @include gridImagenes(4,5%); 
+
+.card{
+  border-block-color: red;
+  border-radius: 3%;
+}
+.btn{
+  text-decoration: none;
+  padding: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: helvetica;
+  font-weight: 200;
+  font-size: 15px;
+  font-style: italic;
+  color: #2257d3;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  border: 1px double #000000;
+}
+.boton_1:hover{
+  opacity: 1;
+  text-decoration: none;
 }

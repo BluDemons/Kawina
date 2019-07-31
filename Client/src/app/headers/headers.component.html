@@ -1,18 +1,40 @@
-<body>
-  <ul>
-    <a class="navbar-brand" href="dashboard">
+<!-- <body>
+  <div class="navegacion">
+    <a class="logo" href="dashboard">
       <img src="../../assets/person1.jpg" alt="KAWINA" style="width:30px;">
-    </a>
-    <li><a routerLink="dashboard">Inicio</a></li>
-    <li><a routerLink="empresa">Nosotros</a></li>
-    <li><a routerLink="product">Productos</a></li>
-    <li><a routerLink="contact">Contactos</a></li>
+    </a>&nbsp;
+    <nav class="menu">
+    <li><a class="dropbtn" routerLink="dashboard">Inicio</a></li>
+    <li><a class="dropbtn" routerLink="empresa">Nosotros</a></li>
+    <li><a class="dropbtn" routerLink="product">Tienda</a></li>
     <li class="dropdown">
-      <a class="dropbtn">Servicios</a>
-      <div class="dropdown-content">
-        <a routerLink="patronaje">1: Patronajes</a>
-        <a routerLink="consultoria">2: Consultorias</a>
-      </div>
-    </li>
-  </ul>
+        <a class="dropbtn">Servicios</a>
+        <div class="dropdown-content">
+          <a routerLink="patronaje">1: Patronajes</a>
+          <a routerLink="consultoria">2: Consultorias</a>
+        </div>
+      </li>
+    <li><a class="dropbtn" routerLink="contact">Contactos</a></li>
+  </nav>
+</div>
+</body> -->
+<body>
+    <div class="topnav" id="myTopnav">
+        <a class="logo" href="dashboard">
+            <img src="../../assets/person1.jpg" alt="KAWINA" style="width:30px;">
+        </a>&nbsp;
+      <a href="dashboard">Home</a>
+      <a routerLink="empresa">Nosotros</a>
+      <a routerLink="product">Tienda</a>
+      <div class="dropdown">
+        <button class="dropbtn">Servicios 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a routerLink="patronaje">1: Patronajes</a>
+            <a routerLink="consultoria">2: Consultorias</a>
+        </div>
+      </div> 
+      <a class="icon" onclick="responsive()">&#9776;</a>
+    </div>
 </body>

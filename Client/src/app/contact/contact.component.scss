@@ -1,3 +1,11 @@
-p{
-    margin-top:50px
+@import '../../sass/variables';
+@import '../../sass/mixins';
+#page{
+  height: 100vh;
+  top: 50;
+  h1,h2,h3{
+    margin-bottom: 30px;
+    color: black;
+
+  }
 }

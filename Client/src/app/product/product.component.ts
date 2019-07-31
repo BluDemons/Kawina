@@ -10,7 +10,9 @@ import { environment } from '../../environments/environment';
 export class ProductComponent implements OnInit {
   response: any[]
   table_header: any
-  constructor(private http: HttpClient) { }
+agregar:[]
+
+  constructor(private http: HttpClient, ) { }
 
   ngOnInit() {
     this.getData()
@@ -33,5 +35,18 @@ export class ProductComponent implements OnInit {
             console.log(this.response)
         })
   }
-
+carrito(){
+this.response
+.forEach(element => {
+  this.agregar=(element)
+  console.log(this.agregar)
+});
 }
+// total(){
+//   var total:0;
+//   for(let item of this.agregar){
+// total+=item;
+//   }
+//   return total;
+// }
+} 

@@ -14,6 +14,7 @@ import { SingleComponent } from './single/single.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeadersComponent } from './headers/headers.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HeadersComponent } from './headers/headers.component';
     SingleComponent,
     DashboardComponent,
     HeadersComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

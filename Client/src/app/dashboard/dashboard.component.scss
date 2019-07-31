@@ -4,6 +4,7 @@
 body
 {
   @include body;
+  margin: 0;
 }
 
 .content {
@@ -13,16 +14,15 @@ body
     h1{
         @include headers;
     }
+  background-size: cover;
 }
 
 #section-1{
     @include bg_covertint ($r_blanco,$g_blanco,$b_blanco,$r_turquesa,$g_turquesa,$b_turquesa,$alpha_cover,$picture-dashboard);
     height: 100vh;
-    top: 50;
+    top: 0;
     color: $brand-body-color;
-    h1{
-        margin-bottom: 30px;
-    }
+    margin: 0;
 }
 
 #section-2{
@@ -46,25 +46,27 @@ body
         margin-left: 10%;
         margin-right: 10%;
     }
-    footer{
-        position: relative; 
-        bottom: 0;
-        height: 34%;
-        text-align: center;
-        font-size: 15em;
-        background-color: rgb(0, 0, 0,0.5 );
-        margin: 0.1cm;
-        font-size: 20px;
-        a{
-            color: $brand-body-color;
-        }
-        .imgRedonda {
-            width:70px;
-            height:70px;
-            border-radius:160px;
-            border:5px solid $azulOscuro;
-        }
+}
+.info{
+  height: 30vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: $brand-body-color;
+  background-size: cover;
+  padding: 100px;
+  text-align: center;
+    a{
+      color: $brand-white;
+      margin-top: 100;
     }
+    .imgRedonda {
+      position: relative;
+      width:70px;
+      height:70px;
+      border-radius:160px;
+      border:3.5px solid $brand-secondary;
+    }    
 }
 .galeria {
   @include clearfix;
@@ -76,7 +78,7 @@ body
     img {
       display: block;
       max-width: 100%;
-      margin-top: 20%;
+      margin-top: 0%;
       @include border-radius(10px);
     }
   }
@@ -91,5 +93,33 @@ body
     width: 1000px;
   }
 }
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
 
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
 

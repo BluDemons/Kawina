@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class ProductComponent implements OnInit {
   response: any[]
   table_header: any
-agregar:any[]
+  agregar:any[]
 
   constructor(private http: HttpClient, ) { }
 
@@ -30,7 +30,7 @@ agregar:any[]
  carrito(id){
  this.response.forEach(element => {
    if(element.id==id){
-  this.agregar=element
+    this.agregar= Array.of(element);
   console.log(this.agregar)
   }
  });

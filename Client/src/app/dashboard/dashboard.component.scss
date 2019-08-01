@@ -35,7 +35,6 @@ img {
     background-repeat: no-repeat;
     background-attachment: relative;
     background-size: cover;
-    background-image: url('../../assets/img_bg_1.jpg');
     z-index: -1;
     filter: blur(2px);
     -moz-filter:blur(2px);
@@ -55,26 +54,19 @@ img {
     -webkit-animation: slider 20s linear infinite;
   }
   .img1{
-    background-image: url('../../assets/img_bg_2.jpg');
-    animation-delay: 10s;
-    background-repeat: no-repeat;
-    background-attachment: relative;
+    background-image: url('../../assets/img/imagen.png');
+    animation-delay: 13s;
+    background-repeat: repeat;
+    background-attachment: fixed;
     background-size: cover;
   }
   
   .img2{
-    background-image: url('../../assets/img_bg_3.jpg');
-    animation-delay: 10s;
-    background-repeat: no-repeat;
-    background-attachment: relative;
-    background-size: cover;
-  }
-  
-  .img3{
-    background-image: url('../../assets/img_bg_4.jpg');
-    animation-delay: 10s;
-    background-repeat: no-repeat;
-    background-attachment: relative;
+    margin-top: -100vh;
+    background-image: url('../../assets/img/kawina.jpg');
+    animation-delay: 5s;
+    background-repeat: repeat;
+    background-attachment: fixed;
     background-size: cover;
   }
   
@@ -88,7 +80,7 @@ img {
       animation-timing-function: ease-out;
     }
     25%{
-      opacity: 1;
+      opacity: 2;
       transform: scale(1);
     }
     50%{

@@ -21,25 +21,21 @@ $b_deep_blue: 86;
 
 $blanco:      #FDFEFE;
 $r_blanco:0;
-$g_blanco:30;
-$b_blanco:145;
+$g_blanco:0;
+$b_blanco:0;
 
 $light_blue: #4D86FF;
-$r_light_blue: 25;
-$g_light_blue: 117;
-$b_light_blue: 255;
+$r_light_blue: 0;
+$g_light_blue: 0;
+$b_light_blue: 0;
 
 $alpha_cover: 0.6;
-
+//fuentes
 $font-primary: 'Montserrat', Arial, sans-serif;
 $font-secondary: 'Playfair Display', serif;
 
 
-// Overrides
-$grid-gutter-width: 40px !default; 
-$border-radius-base:  4px !default;
-$padding-base-vertical: 14px !default;
-
+//colores
 $brand-primary: #d1c286 !default;
 $brand-secondary: #a9974e !default; 
 
@@ -55,9 +51,11 @@ $brand-bg-color: $brand-white;
 
 $tablet: 768px;
 $desktop: 1024px;
-
+//imagenes
 $picture-dashboard: '../../assets/img/imagen.png';
 $picture-contactos: '../../assets/img/kawina.jpg';
+$picture-about:'../../assets/img/fondo.jpg';
+$picture-product:'../../assets/img_bg_2.jpg';
 //grid
 $numero-columnas: 12;
 $buttons: true !default;

@@ -12,21 +12,21 @@
 * {
   box-sizing: border-box;
 }
-.contenedor{
-  position: relative;
-  display: block;
+#section-3{
+  @include bg_covertint ($r_blanco,$g_blanco,$b_blanco,$r_light_blue,$g_light_blue,$b_light_blue,$alpha_cover,$picture-dashboard);
+  height: 100vh;
+  color: $blanco;
   text-align: center;
-}
-.centrado{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   h1{
-    @include headers;
-    color: $brand-white;
+      margin-top:0;
+  }
+  p{
+      margin-left: 10%;
+      margin-right: 10%;
+  }
 }
-}
+
+
 //
 
 
@@ -61,7 +61,7 @@ label {
   display: inline-block;
 }
 
-input[type=submit] {
+button{
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -71,7 +71,7 @@ input[type=submit] {
   float: right;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
   background-color: #45a049;
 }
 

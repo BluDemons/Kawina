@@ -1,7 +1,6 @@
-
-.card{
-  border-block-color: red;
-  border-radius: 3%;
+.carta{
+  padding: 5px;
+  text-align: justify;
 }
 .btn{
   text-decoration: none;
@@ -20,4 +19,8 @@
 .boton_1:hover{
   opacity: 1;
   text-decoration: none;
+}
+.carrito{
+  padding: 4px;
+  text-align: right;
 }

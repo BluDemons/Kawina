@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Patrones } from '../modelos/patrones';
+import { element } from 'protractor';
 
 
 @Component({
@@ -10,22 +12,12 @@ import { environment } from '../../environments/environment';
 })
 export class ServicesComponent implements OnInit {
   response: any[]
-  table_header: any
+  agregar:Patrones[]
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getData()
-    this.table_header = [
-      {
-        id: 'id',
-        nombre: 'nombre',
-        descripcion: 'precio',
-        precio: 'descripcion',
-        urlArchivo:'urlArchivo',
-        imagen: 'imagen',
-        idServicio:'idServicio',
-      }
-    ]
+    this.agregar = []
   } 
   getData=()=>{
     let tabla = 'patronajes'
@@ -34,6 +26,13 @@ export class ServicesComponent implements OnInit {
             this.response = data.data
             console.log(this.response)
         })
+  }
+  carrito(id){
+    this.response.forEach(element=>{
+      if(element.id==id){
+        this.agregar.push(element);
+      }
+    });
   }
 
 }

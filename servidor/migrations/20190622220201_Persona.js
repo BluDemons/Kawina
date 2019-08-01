@@ -5,11 +5,11 @@ exports.up = function(knex, Promise) {
         table.string('CI');
         table.string('nombres');
         table.string('apellidos');
-        table.string('telefonoConvencional');
         table.string('telefonoCelular');
         table.string('direccionDomiciliaria');
         table.string('correoElectronico');
         table.string('contraseña');
+        table.string('usuario');
        }),
     ])
 };

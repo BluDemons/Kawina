@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 // import Swal from 'sweetalert2';
+=======
+//import Swal from 'sweetalert2';
+>>>>>>> c5b4e62880f8f869731e2a03356efc55c0c3e6b1
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // declare var $: any;
@@ -31,7 +35,11 @@ export class LoginComponent implements OnInit {
   });
   }
 
+<<<<<<< HEAD
   // btnClickHome = function ()
+=======
+  // btnClickHome = function () {
+>>>>>>> c5b4e62880f8f869731e2a03356efc55c0c3e6b1
     
   //   let validacionUser = $('#user').val();
   //   let validacionPass = $('#pass').val();

@@ -16,13 +16,89 @@ body
     }
   background-size: cover;
 }
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.conten{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 
-#section-1{
-    @include bg_covertint ($r_blanco,$g_blanco,$b_blanco,$r_turquesa,$g_turquesa,$b_turquesa,$alpha_cover,$picture-dashboard);
+  .slider {
+    width: 100%;
     height: 100vh;
-    top: 0;
-    color: $brand-body-color;
-    margin: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: cover;
+    background-image: url('../../assets/img_bg_1.jpg');
+    z-index: -1;
+    filter: blur(2px);
+    -moz-filter:blur(2px);
+
+  }
+  
+  li{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-position: center center;
+  
+    animation: slider 20s linear infinite;
+    -moz-animation: slider 20s linear infinite;
+    -ms-animation: slider 20s linear infinite;
+    -o-animation: slider 20s linear infinite;
+    -webkit-animation: slider 20s linear infinite;
+  }
+  .img1{
+    background-image: url('../../assets/img_bg_2.jpg');
+    animation-delay: 10s;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: cover;
+  }
+  
+  .img2{
+    background-image: url('../../assets/img_bg_3.jpg');
+    animation-delay: 10s;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: cover;
+  }
+  
+  .img3{
+    background-image: url('../../assets/img_bg_4.jpg');
+    animation-delay: 10s;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: cover;
+  }
+  
+  @keyframes slider{
+    0%{
+      opacity: 0;
+      animation-timing-function: ease-in;
+    }
+    10%{
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    25%{
+      opacity: 1;
+      transform: scale(1);
+    }
+    50%{
+      opacity: 0;
+      transform: scale(2);
+    }
+    100%{
+      opacity: 0;
+    }
+  }
 }
 
 #section-2{
@@ -52,20 +128,20 @@ body
   top: 0;
   left: 0;
   margin: 0;
-  background-color: $brand-body-color;
+  background-color: $brand-secondary;
   background-size: cover;
   padding: 100px;
   text-align: center;
     a{
       color: $brand-white;
+      text-decoration: none;
       margin-top: 100;
     }
     .imgRedonda {
       position: relative;
-      width:70px;
-      height:70px;
+      width:160px;
+      height:160px;
       border-radius:160px;
-      border:3.5px solid $brand-secondary;
     }    
 }
 .galeria {
@@ -84,14 +160,13 @@ body
   }
 }
 .container {
-  margin: 0 auto;
-  @include clearfix;
-  @include tablet {
-    width:90%;
-  }
-  @include desktop {
-    width: 1000px;
-  }
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-color: $brand-white;
+  background-size: cover;
 }
 /* Create three unequal columns that floats next to each other */
 .column {

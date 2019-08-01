@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Producto } from '../modelos/producto';
 
 @Component({
   selector: 'app-product',
@@ -10,12 +11,13 @@ import { environment } from '../../environments/environment';
 export class ProductComponent implements OnInit {
   response: any[]
   table_header: any
-  agregar:any[]
+  agregar: Producto[]
 
   constructor(private http: HttpClient, ) { }
 
   ngOnInit() {
     this.getData()
+    this.agregar = []
 
   }
 
@@ -30,7 +32,9 @@ export class ProductComponent implements OnInit {
  carrito(id){
  this.response.forEach(element => {
    if(element.id==id){
-    this.agregar= Array.of(element);
+    // this.agregar= Array.of(element);
+    console.log(element);
+    this.agregar.push(element);
   console.log(this.agregar)
   }
  });

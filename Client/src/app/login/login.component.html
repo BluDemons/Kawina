@@ -23,22 +23,38 @@
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="user" class="label">Nombre de Usuario</label>
-                            <input id="user" type="text" class="input">
+                            <input id="user" [(ngModel)]="usuario" name="usuario" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">contraseña</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="nombre" class="label">Nombres</label>
+                            <input id="nombre" [(ngModel)]="nombres" name="usuario" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Repetir contraseña</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="apellido" class="label">Apellido</label>
+                            <input id="apellido" [(ngModel)]="apellidos" name="apellidos" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="direccion" class="label">Direccion Domicilio</label>
+                            <input id="direccion" [(ngModel)]="direccionDomiciliaria" name="direccionDomiciliaria" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="cedula" class="label">Cedula</label>
+                            <input id="cedula" [(ngModel)]="CI" name="CI" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="celular" class="label">Celular</label>
+                            <input id="celular" [(ngModel)]="telefonoCelular" name="telefonoCelular" type="number" class="input" data-type="number">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contraseña</label>
+                            <input id="pass" [(ngModel)]="contrasena" name="contrasena" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Email</label>
-                            <input id="pass" type="text" class="input">
+                            <input id="pass" [(ngModel)]="correoElectronico" name="correoElectronico" type="text" class="input">
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Registrarse">
+                            <input type="submit" (click)="postDataTable()" class="button" value="Registrarse">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">

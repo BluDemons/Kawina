@@ -24,7 +24,7 @@ db.select(campo).from(tabla)
 }
 let ingresarDatos =(req,res)=>{
     let tabla = req.body.tabla
-    let registro= req.body.registros
+    let registro= req.body.registro
     db(tabla).returning('id').insert(registro)
     .then(response=>{
         return res.status(200).json({

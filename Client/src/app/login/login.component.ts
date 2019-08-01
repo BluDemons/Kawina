@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
   postDataTable=()=>{
     let tabla='persona'
-    let registros={tabla:tabla,registro:[{id:this.id,nombres:this.nombres,apellidos:this.apellidos,telefonoCelular:this.telefonoCelular,direccionDomiciliaria:this.direccionDomiciliaria,correoElectronico:this.correoElectronico,contrasena:this.contrasena,usuario:this.usuario}]}
+    let registros={tabla:tabla,registro:[{id:this.id,nombres:this.nombres,apellidos:this.apellidos,CI:this.CI,telefonoCelular:this.telefonoCelular,direccionDomiciliaria:this.direccionDomiciliaria,correoElectronico:this.correoElectronico,contrasena:this.contrasena,usuario:this.usuario}]}
     this.http.post(environment.API_URL+'insertar', registros)
     .subscribe(data=>{
       // this.postData=data

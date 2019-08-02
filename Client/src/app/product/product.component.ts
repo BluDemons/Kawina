@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
   table_header: any
   agregar: Producto[]
 
-  constructor(private http: HttpClient, ) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getData()

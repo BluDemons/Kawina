@@ -11,4 +11,8 @@ let initVar = () => {
         password: 'lenin1234',
         database: 'KAWINA-BDD'
     }
+
+}
+module.exports = {
+    initVar
 }

@@ -13,8 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  title = 'sweetAlert';
-  registerForm: FormGroup;
+    title = 'sweetAlert';
+    registerForm: FormGroup;
     loading = false;
     submitted = false;
     
@@ -34,15 +34,29 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      CI: ['', [Validators.required,Validators.pattern('')]],
-      nombres: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,10}')]],
-      apellidos: ['', [Validators.required]],
-      telefonoConvencional: ['', [Validators.required]],
-      telefonoCelular: ['', [Validators.required]],
-      direccionDomiciliaria: ['', [Validators.required]],
+      usuario:['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
+      CI: ['', [Validators.required,Validators.pattern('^([0|1|2]{1})([0-9]{9})$')]],
+      nombres: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
+      apellidos: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
+      telefonoCelular: ['', [Validators.required,Validators.pattern('^(((09)|(08)|(06)){1})([0-9]{8})$')]],
+      direccionDomiciliaria: ['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
       correoElectronico: ['',[Validators.required,Validators.pattern('[a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')]],
-      contrasena: ['', [Validators.required]],
+      contrasena: ['', [Validators.required,Validators.pattern('[a-zA-Z0-9]{5,15}')]],
   });
+  }
+  validaLoginForm(){
+    if(this.registerForm.valid){
+      this.usuario=JSON.stringify(console.log(this.registerForm.controls))              
+      this.CI = JSON.stringify(console.log(this.registerForm.controls))
+      this.nombres =JSON.stringify(console.log(this.registerForm.controls))
+      this.apellidos =JSON.stringify(console.log(this.registerForm.controls))
+      this.telefonoCelular =JSON.stringify(console.log(this.registerForm.controls))
+      this.direccionDomiciliaria =JSON.stringify(console.log(this.registerForm.controls))
+      this.contrasena =JSON.stringify(console.log(this.registerForm.controls))
+      this.correoElectronico =JSON.stringify(console.log(this.registerForm.controls))
+    }else{
+     alert(`Todos los campos Som obligatorios`)
+    }
   }
   postDataTable=()=>{
     let tabla='persona'
@@ -52,10 +66,7 @@ export class LoginComponent implements OnInit {
       // this.postData=data
       console.log(data)
     })
-  }
-
- 
-    
+  } 
   //   let validacionUser = $('#user').val();
   //   let validacionPass = $('#pass').val();
 

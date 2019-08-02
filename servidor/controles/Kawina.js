@@ -9,7 +9,6 @@ let campo= req.query.campo
 db.select(campo).from(tabla)
     .then(response=>{
        return res.status(200).json({
-        ok:true,
         data:response,
       })
     })
@@ -28,9 +27,7 @@ let ingresarDatos =(req,res)=>{
     db(tabla).returning('id').insert(registro)
     .then(response=>{
         return res.status(200).json({
-            ok:true,
             data:response,
-            mesaje:`se ingresó registro numero ${response}` //para programador
         })
     })
     .catch(error=>{

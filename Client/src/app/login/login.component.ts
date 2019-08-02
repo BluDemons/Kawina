@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-
+import { Login } from '../modelos/login';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // declare var $: any;
 
@@ -13,11 +13,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    title = 'sweetAlert';
+    response: any[]
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-    
+    agregar: Login[]
     //post
     id:number
     CI:string
@@ -29,10 +29,12 @@ export class LoginComponent implements OnInit {
     contrasena:string
     usuario:string
 
-  constructor(private formBuilder: FormBuilder,
-    private router: Router,private http: HttpClient) { }
+  
+  constructor(private formBuilder: FormBuilder,private router: Router,private http: HttpClient) { }
 
   ngOnInit() {
+    this.agregar = [],
+    this.onLogin(),
     this.registerForm = this.formBuilder.group({
       usuario:['', [Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
       CI: ['', [Validators.required,Validators.pattern('^([0|1|2]{1})([0-9]{9})$')]],
@@ -55,7 +57,7 @@ export class LoginComponent implements OnInit {
       this.contrasena =JSON.stringify(console.log(this.registerForm.controls))
       this.correoElectronico =JSON.stringify(console.log(this.registerForm.controls))
     }else{
-     alert(`Todos los campos Som obligatorios`)
+    //  alert(`Todos los campos Som obligatorios`)
     }
   }
   postDataTable=()=>{
@@ -63,10 +65,19 @@ export class LoginComponent implements OnInit {
     let registros={tabla:tabla,registro:[{id:this.id,nombres:this.nombres,apellidos:this.apellidos,CI:this.CI,telefonoCelular:this.telefonoCelular,direccionDomiciliaria:this.direccionDomiciliaria,correoElectronico:this.correoElectronico,contrasena:this.contrasena,usuario:this.usuario}]}
     this.http.post(environment.API_URL+'insertar', registros)
     .subscribe(data=>{
-      // this.postData=data
+       this.response=Array.of(data)
       console.log(data)
     })
   } 
+
+  onLogin = () => {
+    let tabla = 'persona'
+    this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}&campo=usuario&campo=contrasena`)
+      .subscribe(data => {
+        this.response = data.data
+        console.log(this.response)
+      })
+  }
   //   let validacionUser = $('#user').val();
   //   let validacionPass = $('#pass').val();
 

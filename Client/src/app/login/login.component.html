@@ -4,46 +4,66 @@
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
                 <div class="login-form">
-                    <div class="sign-in-htm">
+                  <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)">
+                    <div *ngIf="!isError" class="sign-in-htm">  
                         <div class="group">
                             <label for="user" class="label">Usuario</label>
-                            <input id="user" type="text" class="input">
+                            <input id="user"  [(ngModel)]="usuario" name="usuario" type="text" class="input">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">contraseña</label>
-                            <input id="pass" type="password" class="input" data-type="contraseña">
+                            <input id="pass" [(ngModel)]="contrasena"  name="contrasena" type="password" class="input" data-type="contraseña">
                         </div>
                    
                         <div class="group">
-                            <input type="submit" class="button" (click)="btnClickHome()" value="Ingresar">
+                            <input type="submit" class="button"  value="Ingresar">
                         </div>
                         <div class="hr"></div>
-                      
                     </div>
-                    <div class="sign-up-htm">
+                </form>
+                    <div  class="sign-up-htm">
+                            <form [formGroup]="registerForm" action="">
                         <div class="group">
                             <label for="user" class="label">Nombre de Usuario</label>
-                            <input id="user" type="text" class="input">
+                            <input id="user"  formControlName="usuario" [(ngModel)]="usuario" name="usuario" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">contraseña</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="nombre" class="label">Nombres</label>
+                            <input id="nombre" [(ngModel)]="nombres" formControlName="nombres" name="nombres" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Repetir contraseña</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="apellido" class="label">Apellido</label>
+                            <input id="apellido" [(ngModel)]="apellidos" name="apellidos"  formControlName="apellidos" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="direccion" class="label">Direccion Domicilio</label>
+                            <input id="direccion" [(ngModel)]="direccionDomiciliaria" formControlName="direccionDomiciliaria" name="direccionDomiciliaria" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="cedula" class="label">Cedula</label>
+                            <input id="cedula" [(ngModel)]="CI" formControlName="CI" name="CI" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="celular" class="label">Celular</label>
+                            <input id="celular" [(ngModel)]="telefonoCelular" name="telefonoCelular" formControlName="telefonoCelular" type="number" class="input" data-type="number">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contraseña</label>
+                            <input id="pass" [(ngModel)]="contrasena" formControlName="contrasena" name="contrasena" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Email</label>
-                            <input id="pass" type="text" class="input">
+                            <input id="pass" [(ngModel)]="correoElectronico" formControlName="correoElectronico" name="correoElectronico" type="text" class="input">
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Registrarse">
+                            <input type="submit" (click)="postDataTable()" (click)="validaLoginForm()" class="button" value="Registrarse">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
                         </div>
+                    </form>
                     </div>
+         
                 </div>
             </div>
         </div>

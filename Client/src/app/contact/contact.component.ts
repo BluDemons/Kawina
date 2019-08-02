@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
+import { MessageService } from '../servicio/message.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -16,11 +18,18 @@ export class ContactComponent implements OnInit {
   mensaje:string
   email: string
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private http: HttpClient, public _MessageService:MessageService) { }
 
   ngOnInit() {
     this.crearForm();
+  } 
+
+  contactForm(form) {
+      this._MessageService.sendMessage(form).subscribe(() => {
+        Swal.fire("Formulario de contacto","Mensaje enviado correctamente", 'success');
+      });
   }
+
   crearForm(){
     this.Form = this.formBuilder.group({
       name: ['',[Validators.required,Validators.pattern('[A-Z]{1}[a-z]{3,10}')]],

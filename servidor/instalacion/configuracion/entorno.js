@@ -5,13 +5,10 @@ let initVar = () => {
         // process.env.OPCIONES_JWT = process.env.OPCIONES_JWT || JSON.stringify({expiresIn: 60 * 20, algorithm: 'HS256', jwtid: '5', keyid: '5'})
     process.env.CLIENT = process.env.CLIENT || 'pg'
     process.env.CONNECTION_DB = process.env.CONNECTION_DB || {
+
         host: '127.0.0.1',
         user: 'postgres',
         password: 'lenin1234',
         database: 'KAWINA-BDD'
     }
-}
-
-module.exports = {
-    initVar
 }

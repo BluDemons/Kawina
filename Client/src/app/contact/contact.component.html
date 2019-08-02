@@ -1,67 +1,47 @@
 <body>
-	<div id="section-3">
+	<div id="contactos">
 		<div class="content">
 			<h1>CONTACTOS</h1>
 		</div>
 	</div>
-	<div id="page">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5 col-md-push-1 animate-box">
-					<div class="fh5co-contact-info">
-						<h3>Información</h3>
-						<ul>
-							<li class="address">10 de agosto y la colon <br> Quito-Ecuador</li>
-							<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li class="email"><a href="mailto:info@yoursite.com">info@kawina.com.ec</a></li>
-							<li class="url"><a href="http://gettemplates.co">Direccion de la pagina de la pagina Web</a>
-							</li>
-						</ul>
-					</div>
-					<div class="container">
-						<h3>Cualquier requerimiento o inquietud ponte en contacto con nosotros.</h3>
-						<form [formGroup]="Form">
-							<div class="row">
-								<div class="col-25">
-									<label for="name">Nombre</label>
-								</div>
-								<div class="col-75">
-									<input type="text" id="name" formControlName="name"  placeholder="Nombre..">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-25">
-									<label for="lname">Apellido</label>
-								</div>
-								<div class="col-75">
-									<input type="text" id="lname" formControlName="lastname" name="lastname" placeholder="Apellido..">
-								</div>
-							</div>
-							<div class="row">
-									<div class="col-25">
-										<label for="email">Correo Destinatario</label>
-									</div>
-									<div class="col-75">
-										<input type="text" id="email" formControlName="email" name="email" placeholder="Email..">
-									</div>
-							</div>
-							<div class="row">
-								<div class="col-25">
-									<label for="mensaje">Asunto</label>
-								</div>
-								<div class="col-75">
-									<textarea id="mensaje" name="mensaje" formControlName="mensaje" placeholder="Escribr Algo.."
-										style="height:200px"></textarea>
-								</div>
-							</div>
-							<div class="row">
-								<button class="submit" [disabled]="!Form.valid" (click)="validaForm()" type="submit">
-										Enviar Datos
-								</button>
-							</div>
-						</form>
-					</div>
+	<div id="seccion-1">
+		<div class="column slide">
+			<div class="contact-info">
+				<h3>Información</h3>
+				<ul>
+					<li class="address">10 de agosto y la colon <br> Quito-Ecuador</li>&nbsp;
+					<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>&nbsp;
+					<li class="email"><a href="mailto:info@yoursite.com">info@kawina.com.ec</a></li>&nbsp;
+					<li class="url"><a href="http://gettemplates.co">Direccion de la pagina de la pagina Web</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="column middle">
+			<div class="container">
+				<div class="container mt-5">
+					<h2>Formulario de contacto</h2>
+					<form (ngSubmit)="contactForm(form.value)" #form="ngForm">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input type="text" class="form-control" name="nombre" ngModel>
+						</div>
+						<div class="form-group">
+							<label>Asunto</label>
+							<input type="text" class="form-control" name="asunto" ngModel>
+						</div>
+						<div class="form-group">
+							<label>E-mail</label>
+							<input type="email" class="form-control" name="email" ngModel>
+						</div>
+						<div class="form-group">
+							<label>Mensaje</label>
+							<textarea class="form-control" cols="30" rows="6" name="mensaje" ngModel placeholder="Di algo de Nosotros..."></textarea>
+						</div>
+						<button type="submit" >Enviar Mensaje</button>
+					</form>
 				</div>
+				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 				<!-- </div>
 				<div class="col-md-6 animate-box">
 					<form action="#">

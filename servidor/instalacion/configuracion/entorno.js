@@ -14,4 +14,5 @@ let initVar = () => {
 
 module.exports = {
   initVar
+
 }

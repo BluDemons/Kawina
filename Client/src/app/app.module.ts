@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from './servicio/message.service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -16,7 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeadersComponent } from './headers/headers.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule }    from '@angular/forms';
-
+import { AdministradorComponent } from './administrador/administrador.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +27,9 @@ import { ReactiveFormsModule }    from '@angular/forms';
     DashboardComponent,
     HeadersComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    AdministradorComponent,
+    
   ],
   imports: [
     BrowserModule,

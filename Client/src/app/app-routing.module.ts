@@ -8,6 +8,10 @@ import { ServicesComponent } from './services/services.component';
 import { SingleComponent } from './single/single.component';
 import { LoginComponent } from './login/login.component';
 
+
+//administrador
+import { AdministradorComponent } from './administrador/administrador.component';
+
 const routes: Routes = [
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent},
@@ -16,7 +20,9 @@ const routes: Routes = [
   {path:'product', component:ProductComponent},
   {path:'consultoria', component:SingleComponent},
   {path:'patronaje', component:ServicesComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path:'patronajeAdmi', component: AdministradorComponent},
+
 ];
 
 @NgModule({

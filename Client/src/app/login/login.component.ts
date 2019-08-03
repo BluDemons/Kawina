@@ -69,36 +69,38 @@ export class LoginComponent implements OnInit {
     this.http.post(environment.API_URL + 'insertar', registros)
       .subscribe(data => {
         this.response = Array.of(data)
-     })
-  }
-
-  onLogin(form: NgForm) {
-    if (form.valid) {
-      let tabla = 'persona'
-      this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}&campo=usuario&campo=contrasena`)
-        .subscribe(data => {
-          this.response = data.data
-          this.response.forEach(element=>{
-            console.log(this.response)
-          this.agregar.push(element.contrasena)
-          const contrasena = this.agregar
-          this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}&campo=${contrasena}`)
-          this.router.navigate(['/dashboard'])
-          location.reload();
-          this.isError = false;
-        })
       })
-      error=>this.onIsError()
-    }else{
-      this.onIsError();
+      this.router.navigate(['/login'])
+
     }
-  }
-  onIsError(): void {
-  this.isError = true;
-  setTimeout(() => {
-    this.isError = false;
-  }, 4000);
-}
+
+//   onLogin(form: NgForm) {
+//     if (form.valid) {
+//       let tabla = 'persona'
+//       this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}&campo=usuario&campo=contrasena`)
+//         .subscribe(data => {
+//           this.response = data.data
+//           this.response.forEach(element=>{
+//             console.log(this.response)
+//           this.agregar.push(element.contrasena)
+//           const contrasena = this.agregar
+//           this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}&campo=${contrasena}`)
+//           this.router.navigate(['/dashboard'])
+//           location.reload();
+//           this.isError = false;
+//         })
+//       })
+//       error=>this.onIsError()
+//     }else{
+//       this.onIsError();
+//     }
+//   }
+//   onIsError(): void {
+//   this.isError = true;
+//   setTimeout(() => {
+//     this.isError = false;
+//   }, 4000);
+// }
 }
 // onLogin(form: NgForm) {
 //   if (form.valid) {

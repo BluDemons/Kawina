@@ -24,6 +24,9 @@ h2{
 }
 
 #seccion-1{
+  width: 100%;
+  display: table;
+  clear: both;
   height: 110vh;
   background-color: $brand-lighter;
   .contact-info{
@@ -121,25 +124,9 @@ button[type=submit]:hover {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1086px) {
   .column.side, .column.middle {
     width: 100%;
-  }
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-  color: $brand-primary;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-  &.hover{
-    color:$brand-body-color
   }
 }
 

@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
             table.decimal('precio');
             table.string('descripcion');
             table.string('urlArchivo');
-            table.binary('imagen');
+            table.text('imagen');
             table.integer('idServicio').references('id').inTable('servicios');
         })
     ])

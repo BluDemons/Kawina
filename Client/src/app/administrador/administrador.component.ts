@@ -46,6 +46,7 @@ export class AdministradorComponent implements OnInit {
         console.log(this.response)
       })
   }
+  
 eliminar=(id)=>{
   let tabla='patronajes'
   this.http.delete(environment.API_URL+ `borrar?tabla=${tabla}&&id=${id}`)
@@ -71,7 +72,7 @@ if (files && file) {
 _handleReaderLoaded(readerEvt) {
  var binaryString = readerEvt.target.result;
         this.base64textString= btoa(binaryString);
-        console.log(btoa(binaryString));
+        console.log(this.base64textString);
 }
 
 postDataTable = () => {

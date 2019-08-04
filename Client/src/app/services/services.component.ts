@@ -30,7 +30,7 @@ export class ServicesComponent implements OnInit {
   carrito(id){
     this.response.forEach(element=>{
       if(element.id==id){
-        this.agregar.push(element);
+        this.agregar.push(element.imagen);
       }
     });
   }

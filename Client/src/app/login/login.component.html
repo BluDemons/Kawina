@@ -1,32 +1,11 @@
 <div class="login-wrap">
         <div class="login-html">
             <div class="images">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
                 <div class="login-form">
-                  <form>
-                    <div *ngIf="!isError" class="sign-in-htm">  
-                        <div class="group">
-                            <label for="user" class="label">Usuario</label>
-                            <input id="user"  [(ngModel)]="usuario" name="usuario" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">contraseña</label>
-                            <input id="pass" [(ngModel)]="contrasena"  name="contrasena" type="password" class="input" data-type="contraseña">
-                        </div>
-                   
-                        <div class="group">
-                            <input type="submit" class="button" (click)="onLogin()" value="Ingresar">
-                        </div>
-                        <div class="hr"></div>
-                    </div>
-                </form>
+               
                     <div  class="sign-up-htm">
                             <form [formGroup]="registerForm" action="">
-                        <div class="group">
-                            <label for="user" class="label">Nombre de Usuario</label>
-                            <input id="user"  formControlName="usuario" [(ngModel)]="usuario" name="usuario" type="text" class="input">
-                        </div>
                         <div class="group">
                             <label for="nombre" class="label">Nombres</label>
                             <input id="nombre" [(ngModel)]="nombres" formControlName="nombres" name="nombres" type="text" class="input">
@@ -46,10 +25,6 @@
                         <div class="group">
                             <label for="celular" class="label">Celular</label>
                             <input id="celular" [(ngModel)]="telefonoCelular" name="telefonoCelular" formControlName="telefonoCelular" type="number" class="input" data-type="number">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Contraseña</label>
-                            <input id="pass" [(ngModel)]="contrasena" formControlName="contrasena" name="contrasena" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Email</label>

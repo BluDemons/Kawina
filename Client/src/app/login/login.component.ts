@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.response = Array.of(data)
       })
-      this.router.navigate(['/login'])
+      this.router.navigate(['/dashboard'])
 
     }
 

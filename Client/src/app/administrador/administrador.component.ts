@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AdministradorComponent implements OnInit {
  base64textString:String=""
+ zip:string=""
   response: any[]
   agregar: Patrones[]
   table_header: any
@@ -38,6 +39,7 @@ export class AdministradorComponent implements OnInit {
     ]
     this.getData()
   }
+  //traer dregistros patronajes
   getData = () => {
     let tabla = 'patronajes'
     this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}`)
@@ -46,7 +48,10 @@ export class AdministradorComponent implements OnInit {
         console.log(this.response)
       })
   }
-  
+  //fin traer
+
+
+  //eliminar por id a patronajes/
 eliminar=(id)=>{
   let tabla='patronajes'
   this.http.delete(environment.API_URL+ `borrar?tabla=${tabla}&&id=${id}`)
@@ -55,6 +60,9 @@ eliminar=(id)=>{
   })
   window.location.reload()
 }
+//fin eliminar
+
+// convertir de imagen a base 64 base de datos imagen tipo de dato texto
 handleFileSelect(evt){
   var files = evt.target.files;
   var file = files[0];
@@ -74,15 +82,40 @@ _handleReaderLoaded(readerEvt) {
         this.base64textString= btoa(binaryString);
         console.log(this.base64textString);
 }
+//fin convertir base64
 
+//ingresar datos de tabla patronajes
 postDataTable = () => {
   let tabla = 'patronajes'
-  let registros = { tabla: tabla, registro: [{ id: this.id, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString, idServicio: this.idServicio }] }
+  let registros = { tabla: tabla, registro: [{ id: this.id, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.zip, imagen: this.base64textString, idServicio: this.idServicio }] }
   this.http.post(environment.API_URL + 'insertar', registros)
     .subscribe(data => {
       this.response = Array.of(data)
     })
-    window.location.reload()
+    // window.location.reload()
   }
+  rar(evt){
+    var files = evt.target.files;
+    var file = files[0];
 
+  }
 }
+//   if (files && file) {
+//       var reader = new FileReader();
+  
+//       reader.onload =this.rrar.bind(this);
+  
+//       reader.readAsBinaryString(file);
+  
+//   }
+//   }
+  
+//   rrar(readerEvt) {
+//    var binaryString = readerEvt.target.result;
+//           this.zip= btoa(binaryString);
+//           console.log(this.zip);
+//   }
+// }
+//fin ingresar patronajes
+
+

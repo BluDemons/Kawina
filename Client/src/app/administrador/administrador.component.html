@@ -16,7 +16,7 @@
                 <td>{{item.nombre}}</td>
                 <td>{{item.precio}}</td>
                 <td>{{item.descripcion}}</td>
-                <td>{{item.urlArchivo}}</td>
+                <a href="{{item.urlArchivo}}"></a>
                 <img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}">
                 <td>{{item.idServicio}}</td>
                 <button (click)="eliminar(item.id)">Eliminar</button>
@@ -44,7 +44,7 @@
             </div>
             <div>
                 <label>urlArchivo</label>
-                <input type="text" [(ngModel)]="urlArchivo" name="urlArchivo">
+                <input type="file" (change)="rar($event)"  [(ngModel)]="urlArchivo" name="urlArchivo">
             </div>
             <div>
                 <label>imagen</label>

@@ -17,11 +17,10 @@
                 <td>{{item.precio}}</td>
                 <td>{{item.descripcion}}</td>
                 <td>{{item.urlArchivo}}</td>
-                <input type="image" src="{{item.imagen}}">
+                <input type="image" src="{{'data:image/jpg;base64,'+item.imagen}}">
                 <td>{{item.idServicio}}</td>
                 <button (click)="eliminar(item.id)">Eliminar</button>
             </tr>
-
         </tbody>
     </table>
 </div>
@@ -49,7 +48,7 @@
             </div>
             <div>
                 <label>imagen</label>
-                <input type="file" (change)="onUploadFinish($event)" [(ngModel)]="imagen" name="imagen">
+                <input type="file" (change)="handleFileSelect($event)" [(ngModel)]="imagen" name="imagen">
             </div>
             <div>
                 <label>idServicio</label>

@@ -2,13 +2,14 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import { Patrones } from '../modelos/patrones';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Binary } from 'selenium-webdriver/firefox';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-administrador',
   templateUrl: './administrador.component.html',
   styleUrls: ['./administrador.component.scss']
 })
 export class AdministradorComponent implements OnInit {
+ base64textString:String=""
   response: any[]
   agregar: Patrones[]
   table_header: any
@@ -19,10 +20,10 @@ export class AdministradorComponent implements OnInit {
   precio:number
   descripcion:string
   urlArchivo:string
-  imagen:Binary
   idServicio:number
-  constructor(private http: HttpClient) { }
-
+  imagen:string
+  archivo: Array <File>
+  constructor(private http: HttpClient,private _sanitizer: DomSanitizer ) { }
   ngOnInit() {
     this.table_header = [
       {
@@ -36,7 +37,6 @@ export class AdministradorComponent implements OnInit {
       }
     ]
     this.getData()
-    this.agregar = []
   }
   getData = () => {
     let tabla = 'patronajes'
@@ -54,18 +54,34 @@ eliminar=(id)=>{
   })
   window.location.reload()
 }
+handleFileSelect(evt){
+  var files = evt.target.files;
+  var file = files[0];
 
-onUploadFinish(event) {
-  console.log(event);
+if (files && file) {
+    var reader = new FileReader();
+
+    reader.onload =this._handleReaderLoaded.bind(this);
+
+    reader.readAsBinaryString(file);
+
 }
+}
+
+_handleReaderLoaded(readerEvt) {
+ var binaryString = readerEvt.target.result;
+        this.base64textString= btoa(binaryString);
+        console.log(btoa(binaryString));
+}
+
 postDataTable = () => {
-  if(this.imagen !=null){
   let tabla = 'patronajes'
-  let registro = { tabla: tabla, registro: [{ id: this.id, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.imagen, idServicio: this.idServicio }] }
-  this.http.post(environment.API_URL + 'insertar', registro)
+  let registros = { tabla: tabla, registro: [{ id: this.id, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString, idServicio: this.idServicio }] }
+  this.http.post(environment.API_URL + 'insertar', registros)
     .subscribe(data => {
       this.response = Array.of(data)
     })
+    window.location.reload()
   }
-}
+
 }

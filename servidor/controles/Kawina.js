@@ -2,8 +2,6 @@
 let config = require('../knexfile')
 let env = 'development'
 let db = require('knex')(config[env])
-const bcrypt = require('bcrypt')             
-const crypto = require('crypto')   
 
 let leerDatos =(req,res)=>{
 let tabla = req.query.tabla
@@ -40,45 +38,6 @@ let ingresarDatos =(req,res)=>{
         })
     })
 }
-
-
-
-// let login =(req,res)=>{
-//     let usuario = req.query.usuario
-//     let contrasena= req.query.contrasena
-//     db.select(campo).where('usuario', usuario).from('persona')
-//         .then(response=>{
-
-//            if (response.lenght > 0) {
-//             bcrypt.compare(contrasena, response[0].contrasena, (err, ok) => {
-//                 if(ok){
-//                     response[0].contrasena = '***************'
-//                     return res.status(200).json({
-//                         ok:true,
-//                         data: response
-//                       })
-//                 } else {
-//                     return res.status(200).json({
-//                         ok: false,
-//                         data: null
-//                       })
-//                 }
-               
-
-//             })
-//            }
-            
-//         })
-//         .catch(error=>{
-//             return res.status(500).json({
-//                 ok:false,
-//                 data:null,
-//                 mensaje:`error ${error}`
-//             })
-//         })
-    
-// }
-
 let deleteDatos =(req,res)=>{
     let tabla = req.query.tabla
     let id = req.query.id
@@ -123,7 +82,5 @@ module.exports = {
     leerDatos,
     ingresarDatos,
   deleteDatos,
-  actualizarDatos,
-  
-//   login
+  actualizarDatos
 }

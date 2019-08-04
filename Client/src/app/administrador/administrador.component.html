@@ -16,8 +16,8 @@
                 <td>{{item.nombre}}</td>
                 <td>{{item.precio}}</td>
                 <td>{{item.descripcion}}</td>
-                <a href="{{item.urlArchivo}}"></a>
-                <img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}">
+                <td><a href="{{item.urlArchivo}}"></a></td>
+                <td><img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}"></td>
                 <td>{{item.idServicio}}</td>
                 <button (click)="eliminar(item.id)">Eliminar</button>
             </tr>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <label>precio</label>
-                <input type="text" [(ngModel)]="precio" name="precio">
+                <input type="number" [(ngModel)]="precio" name="precio">
             </div>
             <div>
                 <label>descripcion</label>
@@ -44,7 +44,7 @@
             </div>
             <div>
                 <label>urlArchivo</label>
-                <input type="file" (change)="rar($event)"  [(ngModel)]="urlArchivo" name="urlArchivo">
+                <input type="file" (change)="rar($event)" [(ngModel)]="urlArchivo" name="urlArchivo">
             </div>
             <div>
                 <label>imagen</label>
@@ -58,6 +58,7 @@
         <button (click)="postDataTable()">Ingresar Nuevo Patron</button>
     </tbody>
 </div>
+
 <!-- 
 
     <tr *ngFor="let item of response">
@@ -69,3 +70,52 @@
         <td>{{ item.imagen }}</td>
         <td>{{ item.idServicio }}</td>
     </tr> -->
+
+<h3>Eliminar Productos</h3>
+<div>
+    <table class="table table-1">
+        <thead *ngFor="let item of table_header2">
+            <th>{{item.id}}</th>
+            <th>{{item.nombre}}</th>
+            <th>{{item.precio}}</th>
+            <th>{{item.descripcion}}</th>
+            <th>{{item.imagen}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let index of respuesta">
+                <td>{{index.id}}</td>
+                <td>{{index.nombre}}</td>
+                <td>{{index.precio}}</td>
+                <td>{{index.descripcion}}</td>
+                <td><img width="100" height="100" src="data:image/jpg;base64,{{index.imagen}}"></td>
+                <button (click)="eliminarProducto(index.id)">Eliminar Producto</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<h3>Ingresar Productos</h3>
+<div>
+    <tbody>
+        <tr>
+            <div>
+                <label>nombre</label>
+                <input type="text" [(ngModel)]="nombre2" name="nombre2">
+            </div>
+            <div>
+                <label>precio</label>
+                <input type="number" [(ngModel)]="precio2" name="precio2">
+            </div>
+            <div>
+                <label>descripcion</label>
+                <input type="text" [(ngModel)]="descripcion2" name="descripcion2">
+            </div>
+            <div>
+                <label>imagen</label>
+                <input type="file" (change)="handleFileSelect2($event)" [(ngModel)]="imagen2" name="imagen2">
+            </div>
+        </tr>
+        <button (click)="postDataTableProductos()">Ingresar Nuevo Producto</button>
+    </tbody>
+</div>

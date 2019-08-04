@@ -136,7 +136,7 @@ _handleReaderLoaded(readerEvt) {
 //ingresar datos de tabla patronajes
 postDataTable = () => {
   let tabla = 'patronajes'
-  let registros = { tabla: tabla, registro: [{ id: this.id1, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString, idServicio: this.idServicio }] }
+  let registros = { tabla: tabla, registro: [{ id: this.id1, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString2, idServicio: this.idServicio }] }
   this.http.post(environment.API_URL + 'insertar', registros)
     .subscribe(data => {
       this.response = Array.of(data)

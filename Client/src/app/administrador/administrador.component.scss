@@ -1,11 +1,35 @@
 body
 {
-    table{
-        width: 100;
-        th,td{
-            width: 25;
-        }
-    }
     margin: 0%;
     padding: 0%;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #000 url("../../assets/img8.jpg") bottom left repeat-x;    width: 100%;
+    color: #fff;
+    th,td{
+        background: #fff;
+        color: #000;
+        width: 25%;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #000;
+        border-collapse: collapse;
+    }
+    caption{
+        padding: 0.3em;
+    }
+}
+form{
+    input{
+        border:1px dotted #999;
+        border-radius: 2;
+        -webkit-appearance: none;
+        width: 150%;
+        margin: 0;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 }

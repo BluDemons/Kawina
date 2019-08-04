@@ -6,7 +6,15 @@
     <nav class="menu">
     <a routerLink="dashboard">Home</a>
     <a routerLink="empresa">Nosotros</a>
-    <a routerLink="product">Tienda</a>
+    <div class="dropdown">
+      <button class="dropbtn">Tienda 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <a routerLink="product">1: Productos</a>
+          <a routerLink="patronaje">2: Patrones</a>
+      </div>
+    </div> 
     <div class="dropdown">
       <button class="dropbtn">Servicios 
         <i class="fa fa-caret-down"></i>

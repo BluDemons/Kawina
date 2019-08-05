@@ -1,0 +1,13 @@
+<body>
+    <div class="form">
+        <h2>login</h2>
+        <form action="">
+            <p>Usuario</p>
+            <input type="text" [(ngModel)]="login.usuario" name="usuario" id="usuario" placeholder="Usuario">
+            <p>Contraseña</p>
+            <input type="password" [(ngModel)]="login.contrasena" name="contrasena" id="contrasena"
+                placeholder="Contraseña">
+            <input type="submit" value="Enviar" (click)="datos(login) ; metodo()">
+        </form>
+    </div>
+</body>

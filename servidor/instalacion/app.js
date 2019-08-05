@@ -2,7 +2,7 @@
 const cors = require('cors');
 const configMensaje = require('../configMensaje');
 const express = require('express'),
-    bodyParser = require('body-parser')
+bodyParser = require('body-parser')
 
 let app = express(),
   rutas = require('../rutas/ruta')

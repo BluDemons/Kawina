@@ -8,8 +8,8 @@ exports.up = function(knex, Promise) {
         table.string('telefonoCelular').notNullable();
         table.string('direccionDomiciliaria').notNullable();
         table.string('correoElectronico').notNullable();
-        table.string('contrasena').notNullable();
-        table.string('usuario').notNullable();
+        // table.string('contrasena').notNullable();
+        // table.string('usuario').notNullable();
        }),
     ])
 };

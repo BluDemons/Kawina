@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { ServicesComponent } from './services/services.component';
 import { SingleComponent } from './single/single.component';
 import { LoginComponent } from './login/login.component';
+import { LoginadmiComponent } from './loginadmi/loginadmi.component';
 
 
 //administrador
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'patronaje', component:ServicesComponent},
   {path: 'login', component:LoginComponent},
   {path:'patronajeAdmi', component: AdministradorComponent},
+  {path:'loginadmi', component: LoginadmiComponent},
 
 ];
 

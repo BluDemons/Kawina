@@ -16,6 +16,7 @@ import { HeadersComponent } from './headers/headers.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { LoginadmiComponent } from './loginadmi/loginadmi.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
     FooterComponent,
     LoginComponent,
     AdministradorComponent,
+    LoginadmiComponent,
     
   ],
   imports: [

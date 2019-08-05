@@ -6,6 +6,4 @@ export interface Login {
     telefonoCelular:string
     direccionDomiciliario:string
     correoElectronico:string
-    contrasena:string
-    usuario:string
 }

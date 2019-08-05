@@ -39,25 +39,25 @@ export class LoginComponent implements OnInit {
     this.agregar = [],
     this.location,
       this.registerForm = this.formBuilder.group({
-        usuario: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
+        // usuario: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
         CI: ['', [Validators.required, Validators.pattern('^([0|1|2]{1})([0-9]{9})$')]],
         nombres: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
         apellidos: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
         telefonoCelular: ['', [Validators.required, Validators.pattern('^(((09)|(08)|(06)){1})([0-9]{8})$')]],
         direccionDomiciliaria: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-z]{3,30}')]],
         correoElectronico: ['', [Validators.required, Validators.pattern('[a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')]],
-        contrasena: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]{5,15}')]],
+        // contrasena: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]{5,15}')]],
       });
   }
   validaLoginForm() {
     if (this.registerForm.valid) {
-      this.usuario = JSON.stringify(console.log(this.registerForm.controls))
+      // this.usuario = JSON.stringify(console.log(this.registerForm.controls))
       this.CI = JSON.stringify(console.log(this.registerForm.controls))
       this.nombres = JSON.stringify(console.log(this.registerForm.controls))
       this.apellidos = JSON.stringify(console.log(this.registerForm.controls))
       this.telefonoCelular = JSON.stringify(console.log(this.registerForm.controls))
       this.direccionDomiciliaria = JSON.stringify(console.log(this.registerForm.controls))
-      this.contrasena = JSON.stringify(console.log(this.registerForm.controls))
+      // this.contrasena = JSON.stringify(console.log(this.registerForm.controls))
       this.correoElectronico = JSON.stringify(console.log(this.registerForm.controls))
     } else {
       //  alert(`Todos los campos Som obligatorios`)
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
   }
   postDataTable = () => {
     let tabla = 'persona'
-    let registros = { tabla: tabla, registro: [{ id: this.id, nombres: this.nombres, apellidos: this.apellidos, CI: this.CI, telefonoCelular: this.telefonoCelular, direccionDomiciliaria: this.direccionDomiciliaria, correoElectronico: this.correoElectronico, contrasena: this.contrasena, usuario: this.usuario }] }
+    let registros = { tabla: tabla, registro: [{ id: this.id, nombres: this.nombres, apellidos: this.apellidos, CI: this.CI, telefonoCelular: this.telefonoCelular, direccionDomiciliaria: this.direccionDomiciliaria, correoElectronico: this.correoElectronico }] }
     this.http.post(environment.API_URL + 'insertar', registros)
       .subscribe(data => {
         this.response = Array.of(data)

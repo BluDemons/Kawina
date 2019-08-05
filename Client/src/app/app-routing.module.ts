@@ -12,6 +12,7 @@ import { LoginadmiComponent } from './loginadmi/loginadmi.component';
 
 //administrador
 import { AdministradorComponent } from './administrador/administrador.component';
+import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
@@ -22,8 +23,9 @@ const routes: Routes = [
   {path:'consultoria', component:SingleComponent},
   {path:'patronaje', component:ServicesComponent},
   {path: 'login', component:LoginComponent},
-  {path:'patronajeAdmi', component: AdministradorComponent},
+  {path:'admin', component: AdministradorComponent},
   {path:'ingresar', component: LoginadmiComponent},
+  {path: 'admin/inicio', component:AdminInicioComponent}
 
 ];
 

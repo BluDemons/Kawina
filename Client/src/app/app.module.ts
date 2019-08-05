@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { LoginadmiComponent } from './loginadmi/loginadmi.component';
+import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { LoginadmiComponent } from './loginadmi/loginadmi.component';
     LoginComponent,
     AdministradorComponent,
     LoginadmiComponent,
+    AdminInicioComponent,
     
   ],
   imports: [

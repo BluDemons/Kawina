@@ -5,88 +5,62 @@
       <li class="img2"></li>
       <li class="img3"></li>
     </ul>
-    <h1>KAWINA</h1>
-    <div id="about">
-      <p>Nuestra empresa conformada por profesionales apasionados por la moda 100% ecuatorianos con más de una década de
-        experiencia en la asesoría en el diseño y en servicios para la industria de la moda. Queremos que tú también
-        perfecciones tu conocimiento para la aplicación en el campo de la moda gracias a nuestras capacitaciones online
-        y
-        nuestros servicios.
-      </p>
-    </div>
   </div>
+  <div *ngFor="let elemento of response" >
+      <h1>{{elemento.titulo1}}</h1>
+      <div id="about">
+        <p>{{elemento.descripcion}}
+        </p>
+    </div>
   <div class="container">
     <div class="row">
       <div class="column side">
         <h2>OBJETIVO</h2>
-        <p>Ante la necesidad de las empresas de confección, de contratar profesionales freelance bien por exceso de
-          trabajo o disminuir los costes fijos de su empresa. Nuestros equipos de colaboradores y nosotros , estamos
-          preparados para hacerle parte de los desarrollos de su proyecto o gestionar y controlar todo el proceso de
-          producción completo.
-          Nos adaptamos al volumen de prendas que necesite, pequeñas o grandes producciones.
-        </p>
+        <p>{{elemento.objetivo}}</p>
       </div>
 
       <div class="column middle">
         <h2>MISIÓN</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
-          velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
-          purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
-          velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
-          purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.
-        </p>
+        <p>{{elemento.mision}}</p>
       </div>
       <div class="column middle">
         <h2>VISIÓN</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
-          velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
-          purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis
-          velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
-          purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.
-        </p>
+        <p>{{elemento.vision}}</p>
       </div>
     </div>
   </div>
   <div class="info">
-    <h1>NUESTRO EQUIPO</h1>
+    <h1>{{elemento.titulo2}}</h1>
     <figure>
-      <img src="../../assets/img/person1.jpg" class="imgRedonda">
+      <img src="data:image/jpg;base64,{{elemento.imagen}}" class="imgRedonda">
     </figure>
     <a href="https://www.facebook.com/andre.rojas.98096">KAWINA</a>
-    <p>Apasionados del diseño que tomarán el timón de tu proyecto, requerimiento o inquietud para aplicarle innovación y
-      originalidad brindándote un excelente servicio para el desarrollo de la industria de la moda del país y la región.
-    </p>
+    <p>{{elemento.descripcion1}}</p>
   </div>
   <div id="end">
     <div class="row">
-      <h1>Metas.</h1>
+      <h1>{{elemento.titulo3}}</h1>
       <div class="column">
-        <h2>Experiencia</h2>
+        <h2>{{elemento.subtitulo1}}</h2>
         <p>
-          Trabajamos en la industria de la moda más de una década.
+          {{elemento.descripcion2}}
         </p>
       </div>
       <div class="column">
-        <h2>Innovación</h2>
+        <h2>{{elemento.subtitulo2}}</h2>
         <p>
-          Aplicamos toda nuestra creatividad en cada uno de nuestros proyectos.
+          {{elemento.descripcion3}}
         </p>
       </div>
       <div class="column">
-        <h2>Responsabilidad</h2>
+        <h2>{{elemento.subtitulo3}}</h2>
         <p>
-          Todas nuestras actividades las aplicamos con una responsabilidad 3BL.
-        </p>
-        <p>
-          Ser eficientes nos llevará a un resultado eficaz en cualquier actividad.
+          {{elemento.descripcion4}}
         </p>
       </div>
     </div>
     &copy; KAWINA con más de un siglo de EXPERIENCIA!
   </div>
   <app-footer></app-footer>
+</div>
 </body>

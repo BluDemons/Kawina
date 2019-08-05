@@ -12,11 +12,16 @@ import { login } from '../modelos/admi'
 })
 export class LoginadmiComponent implements OnInit {
   response: any[]
+  response1: any[]
+
   login2:login2[]
   login3:login3[]
   login:any
   respuesta2: any[]
   respuesta1: any[]
+   //pots patronajes-servicios
+   usuario1:string
+   contrasena1:string
   constructor(private http: HttpClient,private router:Router) { }
   recuperardato:[]
   ngOnInit() {
@@ -31,6 +36,15 @@ export class LoginadmiComponent implements OnInit {
   ]
     
 
+  }
+  post=()=>{
+    let tabla = 'admi'
+    let registros = { tabla: tabla, registro: [{ usuario: this.usuario1, contrasena: this.contrasena1}] }
+    this.http.post(environment.API_URL + 'insertar', registros)
+      .subscribe(data => {
+        this.response1 = Array.of(data)
+      })
+       window.location.reload()
   }
 
   getData=()=>{
@@ -64,6 +78,7 @@ metodo=()=>{
 }
 
 }
+
   
 }
 

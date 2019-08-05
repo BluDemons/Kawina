@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { login2 } from '../modelos/login2'
 import { login3 } from '../modelos/login3'
-import { login } from '../modelos/admi'
 @Component({
   selector: 'app-loginadmi',
   templateUrl: './loginadmi.component.html',
@@ -71,8 +70,8 @@ datos=(recuperardato) =>{
  }
  
 metodo=()=>{ 
-  if(this.login.usuario==this.login2[0]&&this.login.contrasena==this.login3[0]){
-  this.router.navigate(['patronajeAdmi'])
+  if(this.login.usuario==this.login2&&this.login.contrasena==this.login3){
+  this.router.navigate(['admin'])
 }else{
   window.location.reload()
 }

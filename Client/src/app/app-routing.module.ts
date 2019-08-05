@@ -15,7 +15,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+  {path:'', redirectTo:'dashboard', pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent},
   {path: 'empresa', component:AboutComponent},
   {path:'contact', component:ContactComponent},

@@ -58,7 +58,7 @@ datos=(recuperardato) =>{
  
 metodo=()=>{ 
   if(this.login.usuario==this.login2[0]&&this.login.contrasena==this.login3[0]){
-  this.router.navigate(['dashboard'])
+  this.router.navigate(['patronajeAdmi'])
 }else{
   window.location.reload()
 }

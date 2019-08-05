@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'patronaje', component:ServicesComponent},
   {path: 'login', component:LoginComponent},
   {path:'patronajeAdmi', component: AdministradorComponent},
-  {path:'loginadmi', component: LoginadmiComponent},
+  {path:'ingresar', component: LoginadmiComponent},
 
 ];
 

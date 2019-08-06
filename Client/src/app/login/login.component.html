@@ -31,19 +31,19 @@
                             <input id="pass" [(ngModel)]="correoElectronico" formControlName="correoElectronico" name="correoElectronico" type="text" class="input">
                         </div>
                         <div class="group">
-                            <input type="submit" (click)="postDataTable()"   class="button" value="Registrarse">
+                            <input type="submit"  (click)="postDataTable()"   class="button" value="Registrarse">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
                         </div>
                     </form>
                     <div class="eroor">
-                        <span *ngIf="registerForm.controls['CI'].errors?.patters">Formulario Invalido</span>
-                        <span *ngIf="registerForm.controls['nombres'].errors?.patters">Formulario Invalido</span>
-                        <span *ngIf="registerForm.controls['apellidos'].errors?.patters">Formulario Invalido</span>
-                        <span *ngIf="registerForm.controls['direccionDomiciliaria'].errors?.patters">Formulario Invalido</span>
-                        <span *ngIf="registerForm.controls['telefonoCelular'].errors?.patters">Formulario Invalido</span>
-                        <span *ngIf="registerForm.controls['correoElectronico'].errors?.patters">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['CI'].errors?.pattern">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['nombres'].errors?.pattern">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['apellidos'].errors?.pattern">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['direccionDomiciliaria'].errors?.pattern">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['telefonoCelular'].errors?.pattern">Formulario Invalido</span>
+                        <span *ngIf="registerForm.controls['correoElectronico'].errors?.pattern">Formulario Invalido</span>
                     </div>
                     </div>
          

@@ -2,13 +2,20 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-administrador',
   templateUrl: './administrador.component.html',
   styleUrls: ['./administrador.component.scss']
 })
 export class AdministradorComponent implements OnInit {
- base64textString:String=""
+  //formularios y validaciones
+  registerForm1: FormGroup;
+  registerForm2: FormGroup;
+  //guarda la base64 de la imagen para mandar al webserver
+  base64textString:String=""
  base64textString2:String=""
   response: any[]
   respuesta: any[]
@@ -16,7 +23,6 @@ export class AdministradorComponent implements OnInit {
   table_header2: any
   //pots patronajes-servicios
   id1:number
-  CI:string
   nombre:string
   precio:number
   descripcion:string
@@ -27,8 +33,19 @@ export class AdministradorComponent implements OnInit {
   nombre2:String
   descripcion2:string
   precio2:number
-  constructor(private http: HttpClient,private _sanitizer: DomSanitizer ) { }
+  constructor(private http: HttpClient, private formBuilder: FormBuilder,private _sanitizer: DomSanitizer ) { }
   ngOnInit() {
+    this.registerForm1 = this.formBuilder.group({
+      nombre:[Validators.required, Validators.pattern('[a-zA-Z0-9\u00f1]{3,20}')],
+      precio:[Validators.required, Validators.pattern('[0-9]{1,2}.*[0-9]{1,2}')],
+      descripcion: [Validators.required ,Validators.pattern('[a-zA-Z0-9\u00f1]{1,700}')],
+  }); 
+
+  this.registerForm2 = this.formBuilder.group({
+    nombre2:[Validators.required, Validators.pattern('[a-zA-Z0-9\u00f1]{3,20}')],
+    precio2:[Validators.required, Validators.pattern('[0-9]{1,2}.*[0-9]{1,2}')],
+    descripcion2: [Validators.required,Validators.pattern('[a-zA-Z0-9\u00f1]{1,700}')],
+}); 
     this.table_header = [
       {
         id: 'N°',
@@ -138,18 +155,23 @@ postDataTable = () => {
   let tabla = 'patronajes'
   let registros = { tabla: tabla, registro: [{ id: this.id1, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString2, idServicio: this.idServicio }] }
   this.http.post(environment.API_URL + 'insertar', registros)
-    .subscribe(data => {
-      this.response = Array.of(data)
-    })
-    window.location.reload()
-  }
+  .subscribe(data => {
+    //   // this.response = Array.of(data)
+    // })
+    Swal.fire('datos INGRESADOS')
+   })
+   window.location.reload()
+}
+
   postDataTableProductos = () => {
     let tabla = 'productos'
     let registros = { tabla: tabla, registro: [{ id: this.id2, nombre: this.nombre2, precio: this.precio2, descripcion: this.descripcion2, imagen: this.base64textString2}] }
     this.http.post(environment.API_URL + 'insertar', registros)
-      .subscribe(data => {
-        this.response = Array.of(data)
-      })
-       window.location.reload()
+    .subscribe(data => {
+      //   // this.response = Array.of(data)
+      // })
+      Swal.fire('datos INGRESADOS')
+     })
+     Swal.fire('datos INGRESADOS')
     }
 }

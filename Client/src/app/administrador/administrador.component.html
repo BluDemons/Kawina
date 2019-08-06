@@ -25,22 +25,28 @@
             </tbody>
             </table>
         </div>
-    <h4>Ingresar Productos</h4>
+    <h4>Ingresar Patrones</h4>
         <div>
             <form>
                 <tbody>
                     <tr>
                         <div>
                             <label>nombre</label>
-                                <input type="text" [(ngModel)]="nombre" name="nombre">
+                            <div [formGroup]="registerForm1">
+                                <input type="text" formControlName="nombre" [(ngModel)]="nombre" name="nombre">
+                            </div>
                         </div>
                         <div>
                             <label>precio</label>
-                                <input type="number" [(ngModel)]="precio" name="precio">
+                            <div [formGroup]="registerForm1">
+                                <input type="number" [(ngModel)]="precio" formControlName="precio" name="precio">
+                            </div>
                         </div>
                         <div>
                             <label>descripcion</label>
-                            <input type="text" [(ngModel)]="descripcion" name="descripcion">
+                            <div [formGroup]="registerForm1">
+                            <input type="text" [(ngModel)]="descripcion" formControlName="descripcion" name="descripcion">
+                        </div>
                         </div>
                             <!-- <div>
                             <label>urlArchivo</label>
@@ -55,7 +61,7 @@
                             <input type="text" [(ngModel)]="idServicio" name="idServicio">
                         </div> -->
                     </tr>
-                        <button (click)="postDataTable()">Ingresar Nuevo Patron</button>
+                        <button [disabled]="registerForm1.valid" (click)="postDataTable()">Ingresar Nuevo Patron</button>
                 </tbody>
             </form>
         </div>
@@ -90,22 +96,28 @@
                     </table>
                     </div>
 
-    <h4>Ingresar Productos</h4>
+    <h4>Ingresar bolsos</h4>
     <div>
         <form>
             <tbody>
                 <tr>
                     <div>
                         <label>nombre</label>
-                        <input type="text" [(ngModel)]="nombre2" name="nombre2">
+                        <div [formGroup]="registerForm2">
+                        <input type="text"  formControlName="nombre2" [(ngModel)]="nombre2" name="nombre2">
+                    </div>
                     </div>
                     <div>
                         <label>precio</label>
-                        <input type="number" [(ngModel)]="precio2" name="precio2">
+                        <div [formGroup]="registerForm2">
+                        <input type="number" [(ngModel)]="precio2" formControlName="precio2" name="precio2">
+                    </div>
                     </div>
                     <div>
                         <label>descripcion</label>
-                        <input type="text" [(ngModel)]="descripcion2" name="descripcion2">
+                        <div [formGroup]="registerForm2">
+                        <input type="text" [(ngModel)]="descripcion2" formControlName="descripcion2" name="descripcion2">
+                    </div>
                     </div>
                     <div>
                         <label>imagen</label>
@@ -113,7 +125,7 @@
                             name="imagen2">
                     </div>
                 </tr>
-                <button (click)="postDataTableProductos()">Ingresar Nuevo Producto</button>
+                <button (click)="postDataTableProductos()" [disabled]="registerForm2.valid">Ingresar Nuevo Producto</button>
             </tbody>
         </form>
     </div>

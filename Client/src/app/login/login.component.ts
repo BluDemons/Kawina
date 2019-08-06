@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.http.post(environment.API_URL + 'insertar', registros)
       .subscribe(data => {
         // this.response = Array.of(data)
-        Swal.fire('datos ingresados')
+        Swal.fire('Resgistro Realizado',('Succes'))
       })
       this.router.navigate(['dashboard'])
     }

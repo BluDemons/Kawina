@@ -57,8 +57,7 @@ export class LoginadmiComponent implements OnInit {
           this.login2.push(element.usuario)
           this.login3.push(element.contrasena)
         })
-        console.log(this.login2[0])
-        console.log(this.login3[0])
+      
       })
   }
 
@@ -67,8 +66,7 @@ export class LoginadmiComponent implements OnInit {
     this.respuesta2.forEach(element => {
       this.login.push(element)
     })
-    console.log(this.login.usuario)
-    console.log(this.login.contrasena)
+   
   }
 
   metodo = () => {

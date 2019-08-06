@@ -17,6 +17,7 @@ export class AdministradorComponent implements OnInit {
   //guarda la base64 de la imagen para mandar al webserver
   base64textString:String=""
  base64textString2:String=""
+ base64textString3:String=""
   response: any[]
   respuesta: any[]
   table_header: any
@@ -80,7 +81,7 @@ export class AdministradorComponent implements OnInit {
     this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}`)
       .subscribe(data => {
         this.response = data.data
-        console.log(this.response)
+        // console.log(this.response)
       })
   }
   getDataProductos = () => {
@@ -88,7 +89,7 @@ export class AdministradorComponent implements OnInit {
     this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}`)
       .subscribe(data => {
         this.respuesta = data.data
-        console.log(this.respuesta)
+        // console.log(this.respuesta)
       })
   }
   //fin traer
@@ -131,7 +132,7 @@ if (files && file) {
 handleReaderLoaded(readerEvt) {
  var binaryString = readerEvt.target.result;
         this.base64textString= btoa(binaryString);
-        console.log(this.base64textString);
+        // console.log(this.base64textString);
 }
 
 handleFileSelect2(evt){
@@ -151,14 +152,14 @@ if (filess && filee) {
 _handleReaderLoaded(readerEvt) {
  var binaryString = readerEvt.target.result;
         this.base64textString2= btoa(binaryString);
-        console.log(this.base64textString2);
+        // console.log(this.base64textString2);
 }
 //fin convertir base64
 
 //ingresar datos de tabla patronajes
 postDataTable = () => {
   let tabla = 'patronajes'
-  let registros = { tabla: tabla, registro: [{ id: this.id1, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.urlArchivo, imagen: this.base64textString2, idServicio: this.idServicio }] }
+  let registros = { tabla: tabla, registro: [{ id: this.id1, nombre: this.nombre, precio: this.precio, descripcion: this.descripcion, urlArchivo: this.base64textString3, imagen: this.base64textString2, idServicio: this.idServicio }] }
   this.http.post(environment.API_URL + 'insertar', registros)
   .subscribe(data => {
     //   // this.response = Array.of(data)
@@ -178,5 +179,25 @@ postDataTable = () => {
       Swal.fire('datos INGRESADOS')
      })
      window.location.reload()
+    }
+
+    handleFileSelect1(evt){
+      var files = evt.target.files;
+      var file = files[0];
+    
+    if (files && file) {
+        var reader = new FileReader();
+    
+        reader.onload =this._handleReaderLoaded1.bind(this);
+    
+        reader.readAsBinaryString(file);
+    
+    }
+    }
+    
+    _handleReaderLoaded1(readerEvt) {
+     var binaryString = readerEvt.target.result;
+            this.base64textString3= btoa(binaryString);
+            
     }
 }

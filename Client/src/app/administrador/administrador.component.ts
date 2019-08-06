@@ -164,8 +164,8 @@ postDataTable = () => {
   .subscribe(data => {
     //   // this.response = Array.of(data)
     // })
-    Swal.fire('datos INGRESADOS')
-   })
+    Swal.fire("Datos Ingresados "," correctamente", 'success'); 
+    })
    window.location.reload()
 }
 
@@ -176,8 +176,8 @@ postDataTable = () => {
     .subscribe(data => {
       //   // this.response = Array.of(data)
       // })
-      Swal.fire('datos INGRESADOS')
-     })
+      Swal.fire("Datos Ingresados "," correctamente", 'success'); 
+    })
      window.location.reload()
     }
 

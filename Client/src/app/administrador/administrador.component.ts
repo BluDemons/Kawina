@@ -39,6 +39,8 @@ export class AdministradorComponent implements OnInit {
       nombre:[Validators.required, Validators.pattern('[a-zA-Z0-9\u00f1]{3,20}')],
       precio:[Validators.required, Validators.pattern('[0-9]{1,2}.*[0-9]{1,2}')],
       descripcion: [Validators.required ,Validators.pattern('[a-zA-Z0-9\u00f1]{1,700}')],
+      idServicio:[Validators.required],
+      base64textString2:[Validators.required],
   }); 
 
   this.registerForm2 = this.formBuilder.group({
@@ -49,22 +51,22 @@ export class AdministradorComponent implements OnInit {
     this.table_header = [
       {
         id: 'N°',
-        nombre: 'nombre',
-        precio: 'precio',
-        descripcion: 'descripcion',
-        urlArchivo: 'urlArchivo',
-        imagen: 'imagen',
-        idServicio: 'idServicio'
+        nombre: 'Nombre',
+        precio: 'Precio',
+        descripcion: 'Descripcion',
+        urlArchivo: 'Archivo',
+        imagen: 'Imagen',
+        idServicio: 'Servicio'
       }
     ]
     this.getData()
     this.table_header2 = [
       {
         id: 'N°',
-        nombre: 'nombre',
-        precio: 'precio',
-        descripcion: 'descripcion',
-        imagen: 'imagen',
+        nombre: 'Nombre',
+        precio: 'Precio',
+        descripcion: 'Pescripcion',
+        imagen: 'Imagen',
       }
     ]
     this.getDataProductos()

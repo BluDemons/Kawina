@@ -8,7 +8,7 @@ let initVar = () => {
                                                                 host: '127.0.0.1', 
                                                                 user: 'postgres', 
                                                                 password: 'roger130296', 
-                                                                database: 'roger1'
+                                                                database: 'kawina'
                                                               }
   }
   

@@ -4,8 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { login2 } from '../modelos/login2'
 import { login3 } from '../modelos/login3'
-import Swal from 'sweetalert2';
-
+import { login } from '../modelos/admi'
 @Component({
   selector: 'app-loginadmi',
   templateUrl: './loginadmi.component.html',
@@ -57,7 +56,8 @@ export class LoginadmiComponent implements OnInit {
           this.login2.push(element.usuario)
           this.login3.push(element.contrasena)
         })
-      
+        console.log(this.login2[0])
+        console.log(this.login3[0])
       })
   }
 
@@ -66,13 +66,13 @@ export class LoginadmiComponent implements OnInit {
     this.respuesta2.forEach(element => {
       this.login.push(element)
     })
-   
+    console.log(this.login.usuario)
+    console.log(this.login.contrasena)
   }
 
   metodo = () => {
-    if (this.login.usuario == this.login2 && this.login.contrasena == this.login3) {
+    if (this.login.usuario == this.login2[0] && this.login.contrasena == this.login3[0]) {
       this.router.navigate(['admin'])
-      Swal.fire('Bienvenido')
     } else {
       window.location.reload()
     }

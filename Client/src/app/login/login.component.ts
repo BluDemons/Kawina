@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         // this.response = Array.of(data)
         Swal.fire('datos ingresados')
-        this.router.navigate(['dashboard'])
       })
+      this.router.navigate(['dashboard'])
     }
 }
 }

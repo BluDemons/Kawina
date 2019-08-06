@@ -7,8 +7,8 @@ let initVar = () => {
     process.env.CONNECTION_DB = process.env.CONNECTION_DB || {
         host: '127.0.0.1',
         user: 'postgres',
-        password: 'lenin1234',
-        database: 'KAWINA-BDD'
+        password: '1234',
+        database: 'kawina'
     }
 }
 

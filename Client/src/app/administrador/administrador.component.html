@@ -88,6 +88,7 @@
                 <th>{{item.nombre}}</th>
                 <th>{{item.precio}}</th>
                 <th>{{item.descripcion}}</th>
+                <th>{{item.idServicio2}}</th>
                 <th>{{item.imagen}}</th>
             </thead>
             <tbody>
@@ -96,6 +97,7 @@
                     <td>{{index.nombre}}</td>
                     <td>{{index.precio}}</td>
                     <td>{{index.descripcion}}</td>
+                    <th>{{index.idServicio}}</th>
                     <td><img width="100" height="100" src="data:image/jpg;base64,{{index.imagen}}"></td>
                     <button (click)="eliminarProducto(index.id)">Eliminar Producto</button>
                 </tr>
@@ -131,6 +133,16 @@
                         <label>imagen</label>
                         <input type="file" (change)="handleFileSelect2($event)" [(ngModel)]="imagen2" name="imagen2">
                     </div>
+                    <div   [formGroup]="registerForm2">
+                            <select [(ngModel)]="idServicio2" formControlName="idServicio2" name="select" id="">
+                            <!-- <select [(ngModel)]="id3"> -->
+                                <option >1</option>
+                                <option >2</option>
+                                <option >3</option>
+                                <option >4</option>
+                            </select>
+                              <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
+                        </div>
                 </tr>
                 <button (click)="postDataTableProductos()" [disabled]="registerForm2.valid">Ingresar Nuevo
                     Producto</button>

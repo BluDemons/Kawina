@@ -33,6 +33,7 @@ export class AdministradorComponent implements OnInit {
   nombre2:String
   descripcion2:string
   precio2:number
+  idServicio2:number
   constructor(private http: HttpClient, private formBuilder: FormBuilder,private _sanitizer: DomSanitizer ) { }
   ngOnInit() {
     this.registerForm1 = this.formBuilder.group({
@@ -47,6 +48,7 @@ export class AdministradorComponent implements OnInit {
     nombre2:[Validators.required, Validators.pattern('[a-zA-Z0-9\u00f1]{3,20}')],
     precio2:[Validators.required, Validators.pattern('[0-9]{1,2}.*[0-9]{1,2}')],
     descripcion2: [Validators.required,Validators.pattern('[a-zA-Z0-9\u00f1]{1,700}')],
+    idServicio2:[Validators.required],
 }); 
     this.table_header = [
       {
@@ -67,6 +69,7 @@ export class AdministradorComponent implements OnInit {
         precio: 'Precio',
         descripcion: 'Pescripcion',
         imagen: 'Imagen',
+        idServicio2: 'Servicio'
       }
     ]
     this.getDataProductos()
@@ -167,7 +170,7 @@ postDataTable = () => {
 
   postDataTableProductos = () => {
     let tabla = 'productos'
-    let registros = { tabla: tabla, registro: [{ id: this.id2, nombre: this.nombre2, precio: this.precio2, descripcion: this.descripcion2, imagen: this.base64textString2}] }
+    let registros = { tabla: tabla, registro: [{ id: this.id2, nombre: this.nombre2, precio: this.precio2, descripcion: this.descripcion2, imagen: this.base64textString2,idServicio: this.idServicio2 }] }
     this.http.post(environment.API_URL + 'insertar', registros)
     .subscribe(data => {
       //   // this.response = Array.of(data)

@@ -172,6 +172,6 @@ postDataTable = () => {
       // })
       Swal.fire('datos INGRESADOS')
      })
-     Swal.fire('datos INGRESADOS')
+     window.location.reload()
     }
 }

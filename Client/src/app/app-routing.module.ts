@@ -8,6 +8,7 @@ import { ServicesComponent } from './services/services.component';
 import { SingleComponent } from './single/single.component';
 import { LoginComponent } from './login/login.component';
 import { LoginadmiComponent } from './loginadmi/loginadmi.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 //administrador
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path:'admin', component: AdministradorComponent},
   {path:'ingresar', component: LoginadmiComponent},
-  {path: 'admin/inicio', component:AdminInicioComponent}
+  {path: 'admin/inicio', component:AdminInicioComponent},
+  {path: 'carrito', component:CarritoComponent}
 
 ];
 

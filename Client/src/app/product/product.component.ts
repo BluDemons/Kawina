@@ -39,11 +39,4 @@ export class ProductComponent implements OnInit {
   }
  });
 }
-// total(){  
-//   var total:0;
-//   for(let precio of this.agregar){
-//    total+=precio;
-//   }
-//   return total;
-// }
 } 

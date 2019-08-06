@@ -1,0 +1,106 @@
+.table-responsive {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive {
+    border: 0;
+    margin-bottom: 0;
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+.cart-table .td-name {
+    display: table-cell;
+}
+
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid rgb(45, 108, 190);
+}
+
+div {
+    display: block;
+}
+
+table>thead:first-of-type>tr>td {
+    border-top-width: 0 !important;
+}
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border-color: black;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 8px 14px;
+    border-top-color: blueviolet;
+    vertical-align: middle;
+}
+
+.btn {
+    border: none;
+    border-radius: 0;
+    background: rgba(210, 233, 6, 0.452);
+    padding: 0;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    line-height: 1;
+    min-width: 0;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px;
+    border-radius: 4px;
+}
+
+.input-group .input-group-btn .btn {
+    min-width: 35px;
+    min-height: 35px;
+}
+
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group {
+    margin: 0;
+}

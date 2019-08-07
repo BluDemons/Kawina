@@ -72,7 +72,7 @@ h2{
   background-size: cover;
 }
 
-input[type=text], select, textarea {
+input[type=text],input[type=password],input[type=email], select, textarea {
   width: 100%;
   padding: 12px;
   color: $brand-body-color;

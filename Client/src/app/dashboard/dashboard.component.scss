@@ -6,6 +6,12 @@ body
   @include body;
   margin: 0;
 }
+.header{
+  h1{
+    @include headers;
+    font-family: $font-primary;
+ }
+}
 
 .content {
 	position: relative;
@@ -47,6 +53,7 @@ img {
   #about{
     text-align: center;
     font-size: 25px; 
+    width: 100%;
     color: $brand-body-color;
   }
   li{
@@ -104,6 +111,7 @@ img {
 #end{
     display: table;
     clear: both;
+    width: 100%;
     @include bg_covertint ($r_deep_blue,$g_deep_blue,$b_deep_blue,$r_light_blue,$g_light_blue,$b_light_blue,$alpha_cover,$picture-dashboard);
     height: 60vh;
     padding: 5vh;
@@ -158,6 +166,7 @@ img {
     }
 }
 .info{
+  width: 100%;
   display: table;
   clear: both;
   height: 50vh;
@@ -190,7 +199,8 @@ img {
   border-radius: 5px;
   background-color:$brand-lighter;
   padding: 50px;
-  font-family: $font-primary  
+  font-family: $font-primary;
+  width: 100%;
 }
 /* Create three unequal columns that floats next to each other */
 .column {

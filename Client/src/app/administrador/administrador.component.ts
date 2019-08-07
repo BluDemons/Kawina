@@ -158,7 +158,7 @@ postDataTable = () => {
   .subscribe(data => {
     //   // this.response = Array.of(data)
     // })
-    Swal.fire('datos INGRESADOS')
+    Swal.fire("datos INGRESADOS",'succes')
    })
    window.location.reload()
 }
@@ -170,7 +170,7 @@ postDataTable = () => {
     .subscribe(data => {
       //   // this.response = Array.of(data)
       // })
-      Swal.fire('datos INGRESADOS')
+      Swal.fire("datos INGRESADOS",'succes')
      })
      window.location.reload()
     }

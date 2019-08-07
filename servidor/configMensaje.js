@@ -4,16 +4,16 @@ module.exports = (formulario) => {
  service: 'gmail',
  auth: {
  user: `${formulario.email}`, // Cambialo por tu email
- pass: 'quemasbe', // Cambialo por tu password
+ pass: `${formulario.password}`, // Cambialo por tu password
 },
 tls: {
-    // do not fail on invalid certs
+    // no fallar en certs inválidos
     rejectUnauthorized: false
 },
 });
  const mailOptions = {
  from: `"${formulario.nombre}"<${formulario.email}>`,
- to: "andresjuan11048@gmail.com", // Cambia esta parte por el destinatario
+ to: "rsp.cedeno@yavirac.edu.ec", // Cambia esta parte por el destinatario
  subject: formulario.asunto,
  html: `
  <strong>Nombre:</strong> ${formulario.nombre} <br/>
@@ -22,7 +22,6 @@ tls: {
  `
  };
  console.log(mailOptions)
- console.log(formulario)
 transporter.sendMail(mailOptions, function (err, info) {
  if (err)
  console.log(err)

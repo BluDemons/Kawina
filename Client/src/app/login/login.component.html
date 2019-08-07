@@ -1,18 +1,18 @@
 <div class="login-wrap">
-        <div class="login-html">
-            <div class="images">
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
-                <div class="login-form">
-               
-                    <div  class="sign-up-htm">
-                        <form [formGroup]="registerForm" action="">
+    <div class="login-html">
+        <div class="images">
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Registrarse</label>
+            <div class="login-form">
+
+                <div class="sign-up-htm">
+                    <form [formGroup]="registerForm" action="">
                         <div class="group">
                             <label for="nombre" class="label">Nombre</label>
                             <input id="nombre" [(ngModel)]="nombres" formControlName="nombres" name="nombres" type="text" class="input">
                         </div>
                         <div class="group">
                             <label for="apellido" class="label">Apellido</label>
-                            <input id="apellido" [(ngModel)]="apellidos" name="apellidos"  formControlName="apellidos" type="text" class="input">
+                            <input id="apellido" [(ngModel)]="apellidos" name="apellidos" formControlName="apellidos" type="text" class="input">
                         </div>
                         <div class="group">
                             <label for="direccion" class="label">Direccion Domicilio</label>
@@ -31,7 +31,7 @@
                             <input id="pass" [(ngModel)]="correoElectronico" formControlName="correoElectronico" name="correoElectronico" type="text" class="input">
                         </div>
                         <div class="group">
-                            <input type="submit"  (click)="postDataTable()"   class="button" value="Registrarse">
+                            <input type="submit" (click)="postDataTable()" class="button" value="Registrarse">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
@@ -45,13 +45,13 @@
                         <span *ngIf="registerForm.controls['telefonoCelular'].errors?.pattern">Formulario Invalido</span>
                         <span *ngIf="registerForm.controls['correoElectronico'].errors?.pattern">Formulario Invalido</span>
                     </div>
-                    </div>
-         
                 </div>
+
             </div>
         </div>
     </div>
-    <div  class="image centrado"  >
-        <img src="../../assets/img/logo1.png" width="275" height="204" >
-    </div>
-    <!-- [disabled]="!registerForm.valid" -->
+</div>
+<div class="image centrado">
+    <img src="../../assets/img/logo1.png" width="275" height="204">
+</div>
+<!-- [disabled]="!registerForm.valid" -->

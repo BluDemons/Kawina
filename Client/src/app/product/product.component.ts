@@ -1,7 +1,10 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Producto } from '../modelos/producto';
+import { element } from 'protractor';
+
 
 @Component({
   selector: 'app-product',
@@ -13,7 +16,7 @@ export class ProductComponent implements OnInit {
   table_header: any
   agregar: Producto[]
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.getData()
@@ -21,22 +24,27 @@ export class ProductComponent implements OnInit {
 
   }
 
-  getData=()=>{
+  getData = () => {
     let tabla = 'productos'
-    this.http.get<any>(environment.API_URL +`leer?tabla=${tabla}`)
-        .subscribe(data => {
-            this.response = data.data
-            console.log(this.response)
-        })
+    this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}`)
+      .subscribe(data => {
+        this.response = data.data
+        console.log(this.response)
+      })
   }
- carrito(id){
- this.response.forEach(element => {
-   if(element.id==id){
-    // this.agregar= Array.of(element);
-    console.log(element);
-    this.agregar.push(element);
-  console.log(this.agregar)
+  carrito(id) {
+    let data
+
+    this.response.forEach(element => {
+      if (element.id == id) {
+        // this.agregar= Array.of(element);
+        console.log(element);
+        this.agregar.push(element);
+        data = this.agregar
+        sessionStorage.setItem('Kawina-Producto', data)
+        this.router.navigate(['/carrito'])
+        console.log(this.agregar)
+      }
+    });
   }
- });
-}
 } 

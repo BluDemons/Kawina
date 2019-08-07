@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   }
   getData=()=>{
     let tabla = 'inicio'
-    this.http.get<any>(environment.API_URL +`leer?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL +`getData?tabla=${tabla}`)
         .subscribe(data => {
             this.response = data.data
             console.log(this.response)

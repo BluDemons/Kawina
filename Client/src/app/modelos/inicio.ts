@@ -1,4 +1,4 @@
-export interface Inicio {
+export class Inicio {
     id: number;
     titulo1: string;
     descripcion: string;

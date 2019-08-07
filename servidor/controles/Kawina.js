@@ -58,7 +58,7 @@ let deleteDatos =(req,res)=>{
     })
 }
  let actualizarDatos = (req,res)=>{
-    let tabla = req.body.tabla
+    let tabla = req.query.tabla
     let registros = req.body.registros
     registros.forEach(element => {
         db(tabla).where('id',element.id).update(element)
@@ -78,9 +78,29 @@ let deleteDatos =(req,res)=>{
     })
 })
 }
+
+let getData = (req,res)=>{
+    let tabla = req.query.tabla
+    let id= req.query.id
+    let campo = req.query.campo
+db.select(campo).returning(id).from(tabla)
+    .then(response=>{
+       return res.status(200).json({
+        data:response,
+      })
+    })
+    .catch(error=>{
+        return res.status(500).json({
+            ok:false,
+            data:null,
+            mensaje:`error ${error}`
+        })
+    })
+}
 module.exports = {
     leerDatos,
     ingresarDatos,
-  deleteDatos,
-  actualizarDatos
+    deleteDatos,
+    actualizarDatos,
+    getData
 }

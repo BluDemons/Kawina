@@ -7,5 +7,6 @@ api.get('/leer',control.leerDatos)
 api.post('/insertar', control.ingresarDatos)
 api.delete('/borrar',control.deleteDatos)
 api.put('/actualizar',control.actualizarDatos)
+api.get('/getData',control.getData)
 
 module.exports = api

@@ -32,36 +32,123 @@
         </div>
     </div>
 </div>
-<div class="product-container text-center product-block" itemscope="" itemtype="https://schema.org/Product">
-    <div class="left-block">
-        <div class="product-block .cart">
-
-            <div *ngFor="let item of response;let i=index">
-                <div>
-                    <div>
-                        <div>
-                            <h1>{{item.nombre}}</h1>
-
-                            <img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image" style="width:20%" src="data:image/jpg;base64,{{item.imagen}}">
 
 
-                            <h4 class="texto">Descripción: {{item.descripcion}}
-                            </h4>
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+
+    <tr>
+
+        <th>
+            <div class="product-container text-center product-block" itemscope="" itemtype="https://schema.org/Product">
+                <div class="left-block">
+                    <div class="product-block .cart">
+
+                        <div *ngFor="let item of response;let i=index">
+                            <div>
+                                <div>
+                                    <div>
+                                        <h1>{{item.nombre}}</h1>
+
+                                        <img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image" style="width:20%" src="data:image/jpg;base64,{{item.imagen}}">
 
 
-                            <h4 class="item-price"></h4>
-                            <span id="price_display" class="js-price-display item-price" itemprop="price" content="4580">
-											$ {{item.precio}}
-											<a href="{{item.urlArchivo}}"></a>
-										</span>
-                            <button (click)="carrito(item.id)" class="ajax_add_to_cart_button">Comprar</button>
-                            <br>
+                                        <h4 class="texto">Descripción: {{item.descripcion}}
+                                        </h4>
+
+
+                                        <h4 class="item-price"></h4>
+                                        <span id="price_display" class="js-price-display item-price" itemprop="price" content="4580">
+                                                            $ {{item.precio}}
+                                                            <a href="{{item.urlArchivo}}"></a>
+                                                        </span>
+                                        <button (click)="carrito(item.id)" class="ajax_add_to_cart_button">Comprar</button>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
-        </div>
-    </div>
 
-</div>
+
+        </th>
+
+        <th>
+            <div class="product-container text-center product-block" itemscope="" itemtype="https://schema.org/Product">
+                <div class="left-block">
+                    <div class="product-block .cart">
+
+                        <div *ngFor="let item of response;let i=index">
+                            <div>
+                                <div>
+                                    <div>
+                                        <h1>{{item.nombre}}</h1>
+
+                                        <img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image" style="width:20%" src="data:image/jpg;base64,{{item.imagen}}">
+
+
+                                        <h4 class="texto">Descripción: {{item.descripcion}}
+                                        </h4>
+
+
+                                        <h4 class="item-price"></h4>
+                                        <span id="price_display" class="js-price-display item-price" itemprop="price" content="4580">
+                                                    $ {{item.precio}}
+                                                    <a href="{{item.urlArchivo}}"></a>
+                                                </span>
+                                        <button (click)="carrito(item.id)" class="ajax_add_to_cart_button">Comprar</button>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </th>
+
+        <th>
+            <div class="product-container text-center product-block" itemscope="" itemtype="https://schema.org/Product">
+                <div class="left-block">
+                    <div class="product-block .cart">
+
+                        <div *ngFor="let item of response;let i=index">
+                            <div>
+                                <div>
+                                    <div>
+                                        <h1>{{item.nombre}}</h1>
+
+                                        <img class="_17TsC _3dS0Z _2lsYE" data-hook="wix-media-image" style="width:20%" src="data:image/jpg;base64,{{item.imagen}}">
+
+
+                                        <h4 class="texto">Descripción: {{item.descripcion}}
+                                        </h4>
+
+
+                                        <h4 class="item-price"></h4>
+                                        <span id="price_display" class="js-price-display item-price" itemprop="price" content="4580">
+                                                    $ {{item.precio}}
+                                                    <a href="{{item.urlArchivo}}"></a>
+                                                </span>
+                                        <button (click)="carrito(item.id)" class="ajax_add_to_cart_button">Comprar</button>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </th>
+
+    </tr>
+
+
+
+
+</table>

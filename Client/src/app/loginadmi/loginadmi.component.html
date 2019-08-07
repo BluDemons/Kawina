@@ -1,4 +1,5 @@
-<div class="form">
+<body>
+<div class="form1">
     <h2>login</h2>
     <form action="">
         <p>Usuario</p>
@@ -6,27 +7,27 @@
         <p>Contraseña</p>
         <input type="password" [(ngModel)]="login.contrasena" name="contrasena" id="contrasena"
             placeholder="Contraseña">
+            <br>
+            <br>
         <input type="submit"  value="Enviar" (click)="datos(login) ; metodo()">
     </form>
 </div>
 <h4>nuevo usuario</h4>
 <div>
     <form>
-        <tbody>
-            <tr>
                 <div>
-                    <label>nombre</label>
+                        <p>Usuario</p>
                     <input type="text" [(ngModel)]="usuario1" name="usuario1">
                 </div>
                 <br>
                 <div>
-                    <label>contraseña</label>
+                        <p>Contraseña</p>
                     <input type="password" [(ngModel)]="contrasena1" name="contrasena1">
                 </div>
                 <br>
-            </tr>
+        
             <br>
             <button (click)="post()">Registrarse</button>
-        </tbody>
     </form>
 </div>
+</body>

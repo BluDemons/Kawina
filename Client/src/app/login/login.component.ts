@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.agregar = [],
       this.registerForm = this.formBuilder.group({
         CI:[Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')],
-        nombres:[Validators.required, Validators.pattern('[A-Za-z\u00f1]{3,30}')],
+        nombres:[Validators.required, Validators.pattern('[A-Za-z\u00f1\]{3,30}')],
         apellidos:[Validators.required, Validators.pattern('[A-Za-z\u00f1]{3,30}')],
         telefonoCelular:  [Validators.required, Validators.pattern('([09|08|06]{1})([0-9]{8,8})')],
         direccionDomiciliaria: [Validators.required],
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.http.post(environment.API_URL + 'insertar', registros)
       .subscribe(data => {
         // this.response = Array.of(data)
-        Swal.fire('datos ingresados')
+        Swal.fire('Resgistro Realizado',('Succes'))
       })
       this.router.navigate(['dashboard'])
     }

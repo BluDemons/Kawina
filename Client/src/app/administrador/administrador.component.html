@@ -1,5 +1,5 @@
 <body>
-    <h3>=>****Eliminar Patrones de diseño****<=</h3> 
+    <h3>Eliminar Patrones de diseño</h3>
     <div>
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
@@ -7,65 +7,71 @@
                 <th>{{item.nombre}}</th>
                 <th>{{item.precio}}</th>
                 <th>{{item.descripcion}}</th>
-                <!-- <th>{{item.urlArchivo}}</th> -->
+                <th>{{item.urlArchivo}}</th>
                 <th>{{item.imagen}}</th>
-                <!-- <th>{{item.idServicio}}</th> -->
-            </thead>
+                <th>{{item.idServicio}}</th>
             <tbody>
                 <tr *ngFor="let item of response">
                     <td>{{item.id}}</td>
                     <td>{{item.nombre}}</td>
                     <td>{{item.precio}}</td>
                     <td>{{item.descripcion}}</td>
-                    <!-- <td><a href="{{item.urlArchivo}}"></a></td> -->
+                    <td><a href="data:application/zip;base64,{{item.urlArchivo}}">Descargar Archivo</a></td>
                     <td><img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}"></td>
-                    <!-- <td>{{item.idServicio}}</td> -->
+                    <td>{{item.idServicio}}</td>
                     <button (click)="eliminar(item.id)">Eliminar</button>
                 </tr>
             </tbody>
-            </table>
-        </div>
-    <h4>Ingresar Patrones</h4>
-        <div>
-            <form>
-                <tbody>
-                    <tr>
-                        <div>
-                            <label>nombre</label>
-                            <div [formGroup]="registerForm1">
-                                <input type="text" formControlName="nombre" [(ngModel)]="nombre" name="nombre">
-                            </div>
+        </table>
+    </div>
+    <h4>Ingresar Patrones De Diseño</h4>
+    <div>
+        <form>
+            <tbody>
+                <tr>
+                    <div>
+                        <label>nombre</label>
+                        <div [formGroup]="registerForm1">
+                            <input type="text" formControlName="nombre" [(ngModel)]="nombre" name="nombre">
                         </div>
-                        <div>
-                            <label>precio</label>
-                            <div [formGroup]="registerForm1">
-                                <input type="number" [(ngModel)]="precio" formControlName="precio" name="precio">
-                            </div>
+                    </div>
+                    <div>
+                        <label>precio</label>
+                        <div [formGroup]="registerForm1">
+                            <input type="number" [(ngModel)]="precio" formControlName="precio" name="precio">
                         </div>
-                        <div>
-                            <label>descripcion</label>
-                            <div [formGroup]="registerForm1">
-                            <input type="text" [(ngModel)]="descripcion" formControlName="descripcion" name="descripcion">
+                    </div>
+                    <div>
+                        <label>descripcion</label>
+                        <div [formGroup]="registerForm1">
+                            <input type="text" [(ngModel)]="descripcion" formControlName="descripcion"
+                                name="descripcion">
                         </div>
-                        </div>
-                            <!-- <div>
-                            <label>urlArchivo</label>
-                            <input type="file" (change)="rar($event)" [(ngModel)]="urlArchivo" name="urlArchivo">
-                        </div> -->
-                        <div>
-                            <label>imagen</label>
-                            <input type="file" (change)="handleFileSelect($event)" [(ngModel)]="imagen" name="imagen">
-                        </div>
-                        <!-- <div>
-                            <label>idServicio</label>
-                            <input type="text" [(ngModel)]="idServicio" name="idServicio">
-                        </div> -->
-                    </tr>
-                        <button [disabled]="registerForm1.valid" (click)="postDataTable()">Ingresar Nuevo Patron</button>
-                </tbody>
-            </form>
-        </div>
-            <!-- <tr *ngFor="let item of response">
+                    </div>
+                    <div>
+                        <label>urlArchivo</label>
+                        <input type="file" (change)="handleFileSelect1($event)" [(ngModel)]="urlArchivo" name="urlArchivo">
+                    </div>
+                    <div>
+                        <label>imagen</label>
+                        <input type="file" (change)="handleFileSelect($event)" [(ngModel)]="imagen" name="imagen">
+                    </div>
+                    <div   [formGroup]="registerForm1">
+                        <select [(ngModel)]="idServicio" formControlName="idServicio" name="select" id="">
+                        <!-- <select [(ngModel)]="id3"> -->
+                            <option >1</option>
+                            <option >2</option>
+                            <option >3</option>
+                            <option >4</option>
+                        </select>
+                          <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
+                    </div>
+                </tr>
+                <button [disabled]="registerForm1.valid" (click)="postDataTable()">Ingresar Nuevo Patron</button>
+            </tbody>
+        </form>
+    </div>
+    <!-- <tr *ngFor="let item of response">
         <td>{{ i{ item.imagen }}</td>
         <td>tem.id }}</td>
         <td>{{ item.nombre }}</td>
@@ -74,27 +80,30 @@
         <td>{{ item.urlArchivo }}</td>
         <td>{{{ item.idServicio }}</td>
     </tr> -->
-            <h3>=>****Eliminar Productos****<=</h3> <div>
-                    <table class="table table-1">
-                        <thead *ngFor="let item of table_header2">
-                            <th>{{item.id}}</th>
-                            <th>{{item.nombre}}</th>
-                            <th>{{item.precio}}</th>
-                            <th>{{item.descripcion}}</th>
-                            <th>{{item.imagen}}</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let index of respuesta">
-                                <td>{{index.id}}</td>
-                                <td>{{index.nombre}}</td>
-                                <td>{{index.precio}}</td>
-                                <td>{{index.descripcion}}</td>
-                                <td><img width="100" height="100" src="data:image/jpg;base64,{{index.imagen}}"></td>
-                                <button (click)="eliminarProducto(index.id)">Eliminar Producto</button>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
+    <h3>Eliminar Productos (Bolsos)</h3>
+    <div>
+        <table class="table table-1">
+            <thead *ngFor="let item of table_header2">
+                <th>{{item.id}}</th>
+                <th>{{item.nombre}}</th>
+                <th>{{item.precio}}</th>
+                <th>{{item.descripcion}}</th>
+                <th>{{item.idServicio2}}</th>
+                <th>{{item.imagen}}</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let index of respuesta">
+                    <td>{{index.id}}</td>
+                    <td>{{index.nombre}}</td>
+                    <td>{{index.precio}}</td>
+                    <td>{{index.descripcion}}</td>
+                    <th>{{index.idServicio}}</th>
+                    <td><img width="100" height="100" src="data:image/jpg;base64,{{index.imagen}}"></td>
+                    <button (click)="eliminarProducto(index.id)">Eliminar Producto</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4>Ingresar bolsos</h4>
     <div>
@@ -104,28 +113,39 @@
                     <div>
                         <label>nombre</label>
                         <div [formGroup]="registerForm2">
-                        <input type="text"  formControlName="nombre2" [(ngModel)]="nombre2" name="nombre2">
-                    </div>
+                            <input type="text" formControlName="nombre2" [(ngModel)]="nombre2" name="nombre2">
+                        </div>
                     </div>
                     <div>
                         <label>precio</label>
                         <div [formGroup]="registerForm2">
-                        <input type="number" [(ngModel)]="precio2" formControlName="precio2" name="precio2">
-                    </div>
+                            <input type="number" [(ngModel)]="precio2" formControlName="precio2" name="precio2">
+                        </div>
                     </div>
                     <div>
                         <label>descripcion</label>
                         <div [formGroup]="registerForm2">
-                        <input type="text" [(ngModel)]="descripcion2" formControlName="descripcion2" name="descripcion2">
-                    </div>
+                            <input type="text" [(ngModel)]="descripcion2" formControlName="descripcion2"
+                                name="descripcion2">
+                        </div>
                     </div>
                     <div>
                         <label>imagen</label>
-                        <input type="file" (change)="handleFileSelect2($event)" [(ngModel)]="imagen2"
-                            name="imagen2">
+                        <input type="file" (change)="handleFileSelect2($event)" [(ngModel)]="imagen2" name="imagen2">
                     </div>
+                    <div   [formGroup]="registerForm2">
+                            <select [(ngModel)]="idServicio" formControlName="idServicio2" name="select" id="">
+                            <!-- <select [(ngModel)]="id3"> -->
+                                <option >1</option>
+                                <option >2</option>
+                                <option >3</option>
+                                <option >4</option>
+                            </select>
+                              <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
+                        </div>
                 </tr>
-                <button (click)="postDataTableProductos()" [disabled]="registerForm2.valid">Ingresar Nuevo Producto</button>
+                <button (click)="postDataTableProductos()" [disabled]="registerForm2.valid">Ingresar Nuevo
+                    Producto</button>
             </tbody>
         </form>
     </div>
@@ -134,3 +154,4 @@
         <a href="/admin/inicio">❯</a>
     </div>
 </body>
+<script type="text/javascript" src="https://raw.github.com/Stuk/jszip/master/jszip.js"></script>

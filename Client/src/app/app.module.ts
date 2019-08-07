@@ -18,6 +18,7 @@ import { ReactiveFormsModule }    from '@angular/forms';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { LoginadmiComponent } from './loginadmi/loginadmi.component';
 import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
+import { CarritoComponent } from './carrito/carrito.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
     AdministradorComponent,
     LoginadmiComponent,
     AdminInicioComponent,
+    CarritoComponent,
     
   ],
   imports: [

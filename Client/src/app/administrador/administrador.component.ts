@@ -164,20 +164,20 @@ postDataTable = () => {
   .subscribe(data => {
     //   // this.response = Array.of(data)
     // })
-    Swal.fire('datos INGRESADOS')
-   })
+    Swal.fire("Datos Ingresados "," correctamente", 'success'); 
+    })
    window.location.reload()
 }
 
   postDataTableProductos = () => {
     let tabla = 'productos'
-    let registros = { tabla: tabla, registro: [{ id: this.id2, nombre: this.nombre2, precio: this.precio2, descripcion: this.descripcion2, imagen: this.base64textString2,idServicio: this.idServicio2 }] }
+    let registros = { tabla: tabla, registro: [{ id: this.id2, nombre: this.nombre2, precio: this.precio2, descripcion: this.descripcion2, imagen: this.base64textString2,idServicio: this.idServicio }] }
     this.http.post(environment.API_URL + 'insertar', registros)
     .subscribe(data => {
       //   // this.response = Array.of(data)
       // })
-      Swal.fire('datos INGRESADOS')
-     })
+      Swal.fire("Datos Ingresados "," correctamente", 'success'); 
+    })
      window.location.reload()
     }
 

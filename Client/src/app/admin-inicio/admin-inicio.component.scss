@@ -1,22 +1,20 @@
 @import '../../sass/variables';
 @import '../../sass/mixins';
 
+body{
+  .container {
+    text-align: justify;
+    border-radius: 5px;
+    background-color:$brand-lighter;
+    padding: 50px;
+    font-family: $font-primary;
+  }
+}
 
-.pagination {
-    display: inline-block;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-  }
   input[type=text], select, textarea {
+    text-align: justify;
     width: 50%;
-    padding: 12px;
+    padding: 5px;
     color: $brand-body-color;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -38,8 +36,19 @@
     cursor: pointer;
     float: left;
   }
-  
   button[type=submit]:hover {
     background-color: #45a049;
   }
+.pagination {
+  float: right;
+  display: block;
+}
+
+.pagination a {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, JsonpInterceptor } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Inicio } from '../modelos/inicio';
 
@@ -11,12 +11,10 @@ import { Inicio } from '../modelos/inicio';
 export class DashboardComponent implements OnInit {
   response: any[]
   table_header: any
-  informaciones: Inicio[]
 
   constructor(private http: HttpClient) { }
   ngOnInit() {
     this.getData()
-    this.informaciones = []
   }
   // getData = () => {
   //   let tabla = 'inicio'
@@ -29,7 +27,7 @@ export class DashboardComponent implements OnInit {
   // }
   getData = () => {
     let tabla = 'inicio'
-    this.http.get<any>(environment.API_URL + `leer?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL + `getData?tabla=${tabla}`)
       .subscribe(data => {
         this.response = data.data
         // console.log(this.response)

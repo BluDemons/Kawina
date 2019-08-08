@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         CI:[Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')],
         nombres:[Validators.required, Validators.pattern('[A-Za-z\u00f1\]{3,30}')],
         apellidos:[Validators.required, Validators.pattern('[A-Za-z\u00f1]{3,30}')],
-        telefonoCelular:  [Validators.required, Validators.pattern('([09|08|06]{1})([0-9]{8,8})')],
+        telefonoCelular:  [Validators.required, Validators.pattern('([09|08|06]{1})([0-9]{8})')],
         direccionDomiciliaria: [Validators.required],
         correoElectronico: [Validators.required, Validators.pattern('[a-z]+[a-z0-9.-_]*@[a-z]+[a-z0-9]*.[a-z]{2,3}[.]?[a-z]*')],
     }); 

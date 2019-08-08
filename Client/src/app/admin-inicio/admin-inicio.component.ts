@@ -43,23 +43,42 @@ export class AdminInicioComponent implements OnInit {
     this.getData(),
       this.crearForm()
   }
-  postDataTableProductos = () => {
-    let tabla = 'productos'
-    let registros = { tabla: tabla, registro: [{ id: this.id, titulo1: this.titulo1, descripcion: this.descripcion, objetivo: this.objetivo, mision: this.mision, idServicio: this.idServicio2 }] }
+  postDataTable = () => {
+    let tabla = 'inicio'
+    let registros = {
+      tabla: tabla,
+      registro: [{
+        id: this.id,
+        titulo1: this.titulo1,
+        descripcion: this.descripcion,
+        objetivo: this.objetivo,
+        mision: this.mision,
+        vision: this.vision,
+        titulo2: this.titulo2,
+        imagen: this.base64textString,
+        descripcion1: this.descripcion1,
+        titulo3: this.titulo3,
+        subtitulo1: this.subtitulo1,
+        descripcion2: this.descripcion2,
+        subtitulo2: this.subtitulo2,
+        descripcion3: this.descripcion3,
+        subtitulo3: this.subtitulo3,
+        descripcion4: this.descripcion4
+      }]
+    }
     this.http.post(environment.API_URL + 'insertar', registros)
       .subscribe(data => {
-        //   // this.response = Array.of(data)
-        // })
-        Swal.fire("Datos Ingresados ", " correctamente", 'success');
+        this.response = Array.of(data)
+        Swal.fire('Bienvenido')
       })
-    window.location.reload()
+      this.router.navigate(['dashboard'])
   }
 
   //traer datos 
   getData = () => {
-    const id = localStorage.getItem('id')
+    let id = localStorage.getItem('id')
     let tabla = 'inicio'
-    this.http.get<any>(environment.API_URL + `getData?tabla=${tabla}&id` + id)
+    this.http.get<any>(environment.API_URL + `getData?tabla=${tabla}%id=`+id)
       .subscribe(data => {
         this.response = data.data
         // console.log(this.response)
@@ -68,12 +87,12 @@ export class AdminInicioComponent implements OnInit {
 
   eliminar = (id) => {
     let tabla = 'inicio'
-    this.http.delete(environment.API_URL + `borrar?tabla=${tabla}&&id=${id}`)
+    this.http.delete(environment.API_URL + `borrar?tabla=${tabla}`)
       .subscribe(data => {
       })
     window.location.reload()
   }
-  
+
 
   crearForm() {
     this.editarForm = this.formBuilder.group({
@@ -112,6 +131,5 @@ export class AdminInicioComponent implements OnInit {
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
     this.base64textString = btoa(binaryString);
-    console.log(this.base64textString);
   }
 }

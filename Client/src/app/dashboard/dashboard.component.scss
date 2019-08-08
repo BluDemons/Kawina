@@ -1,233 +1,247 @@
 @import '../../sass/variables';
 @import '../../sass/mixins';
-
-body
-{
-  @include body;
-  margin: 0;
+body {
+    @include body;
+    margin: 0;
 }
-.header{
-  h1{
-    @include headers;
-    font-family: $font-primary;
- }
+
+.header {
+    h1 {
+        @include headers;
+        font-family: $font-primary;
+    }
 }
 
 .content {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-    h1{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    h1 {
         @include headers;
     }
-  background-size: cover;
-}
-img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-.conten{
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-
-  .slider {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: relative;
     background-size: cover;
-    z-index: -1;
-    filter: blur(2px);
-    -moz-filter:blur(2px);
-  }
-  h1{
-    @include headers;
-    font-family: $font-primary;
- }
- 
-  #about{
-    text-align: center;
-    font-size: 25px; 
-    width: 100%;
-    color: $brand-body-color;
-  }
-  li{
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.conten {
     width: 100%;
     height: 100%;
-    position: relative;
-    background-position: center center;
-  
-    animation: slider 20s linear infinite;
-    -moz-animation: slider 20s linear infinite;
-    -ms-animation: slider 20s linear infinite;
-    -o-animation: slider 20s linear infinite;
-    -webkit-animation: slider 20s linear infinite;
-  }
-  .img1{
-    background-image: url('../../assets/img/Pantalla1.jpg');
-    animation-delay: 13s;
-    background-repeat: repeat;
-    background-attachment: fixed;
     background-size: cover;
-  }
-  
-  .img2{
-    margin-top: -100vh;
-    background-image: url('../../assets/img/Pantalla2.jpg');
-    animation-delay: 5s;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-  
-  @keyframes slider{
-    0%{
-      opacity: 0;
-      animation-timing-function: ease-in;
+    .slider {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: relative;
+        background-size: cover;
+        z-index: -1;
+        filter: blur(2px);
+        -moz-filter: blur(2px);
     }
-    10%{
-      opacity: 1;
-      animation-timing-function: ease-out;
+    h1 {
+        @include headers;
+        font-family: $font-primary;
     }
-    25%{
-      opacity: 2;
-      transform: scale(1);
+    #about {
+        text-align: center;
+        font-size: 25px;
+        width: 100%;
+        color: $brand-body-color;
     }
-    50%{
-      opacity: 0;
-      transform: scale(2);
+    li {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-position: center center;
+        animation: slider 20s linear infinite;
+        -moz-animation: slider 20s linear infinite;
+        -ms-animation: slider 20s linear infinite;
+        -o-animation: slider 20s linear infinite;
+        -webkit-animation: slider 20s linear infinite;
     }
-    100%{
-      opacity: 0;
+    .img1 {
+        background-image: url('../../assets/img/Pantalla1.jpg');
+        animation-delay: 13s;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
-  }
+    .img2 {
+        margin-top: -100vh;
+        background-image: url('../../assets/img/Pantalla2.jpg');
+        animation-delay: 5s;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    @keyframes slider {
+        0% {
+            opacity: 0;
+            animation-timing-function: ease-in;
+        }
+        10% {
+            opacity: 1;
+            animation-timing-function: ease-out;
+        }
+        25% {
+            opacity: 2;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0;
+            transform: scale(2);
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 }
 
-#end{
+#end {
     display: table;
     clear: both;
     width: 100%;
-    @include bg_covertint ($r_deep_blue,$g_deep_blue,$b_deep_blue,$r_light_blue,$g_light_blue,$b_light_blue,$alpha_cover,$picture-dashboard);
+    @include bg_covertint ($r_deep_blue,
+    $g_deep_blue,
+    $b_deep_blue,
+    $r_light_blue,
+    $g_light_blue,
+    $b_light_blue,
+    $alpha_cover,
+    $picture-dashboard);
     height: 60vh;
     padding: 5vh;
     color: $blanco;
     text-align: center;
-    h1{
-        margin-top:0;
+    h1 {
+        margin-top: 0;
         font-family: $font-primary;
     }
-    p{
+    p {
         margin-left: 10%;
         margin-right: 10%;
     }
     .column {
-      float: left;
-      width: 30%;
-      padding: 15px;
-      text-align: justify;
-      color: $brand-lighter;
-      h2{
-          @include headers;
-          font-family: $font-primary;
-          color: $brand-gray;
-          font-size: 40px;
-      }
-      h5{
-          color:$brand-secondary;
-          font-size: 24px;
-      }
-      .image{
-          margin-left: 100px;
-          width:160px;
-          height:160px;
-          border-radius:160px;
-      }
-      ul{
-          font-size: 20px;
-      }
+        float: left;
+        width: 30%;
+        padding: 15px;
+        text-align: justify;
+        color: $brand-lighter;
+        h2 {
+            @include headers;
+            font-family: $font-primary;
+            color: $brand-gray;
+            font-size: 40px;
+        }
+        h5 {
+            color: $brand-secondary;
+            font-size: 24px;
+        }
+        .image {
+            margin-left: 100px;
+            width: 160px;
+            height: 160px;
+            border-radius: 160px;
+        }
+        ul {
+            font-size: 20px;
+        }
     }
     /* Clear floats after the columns */
     .row:after {
-      content: "";
-      display: table;
-      clear: both;
+        content: "";
+        display: table;
+        clear: both;
     }
-    
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
     @media screen and (max-width:600px) {
-      .column {
-        width: 100%;
-      }
+        .column {
+            width: 100%;
+        }
     }
 }
-.info{
-  width: 100%;
-  display: table;
-  clear: both;
-  height: 50vh;
-  top: 0;
-  left: 0;
-  margin: 0;
-  background-color: $brand-secondary;
-  background-size: cover;
-  padding: 50px;
-  text-align: center;
-    a{
-      color: $brand-white;
-      text-decoration: none;
-      margin-top: 100;
-      font-size: 25px;
+
+.info {
+    width: 100%;
+    display: table;
+    clear: both;
+    height: 50vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: $brand-secondary;
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+    a {
+        color: $brand-white;
+        text-decoration: none;
+        margin-top: 100;
+        font-size: 25px;
     }
-    p{
-      font-size: 20px;
+    p {
+        font-size: 20px;
     }
     .imgRedonda {
-      position: relative;
-      width:160px;
-      height:160px;
-      border-radius:160px;
-    }    
-    
-    
+        position: relative;
+        width: 160px;
+        height: 160px;
+        border-radius: 160px;
+    }
 }
+
 .container {
-  border-radius: 5px;
-  background-color:$brand-lighter;
-  padding: 50px;
-  font-family: $font-primary;
-  width: 100%;
+    border-radius: 5px;
+    background-color: $brand-lighter;
+    padding: 50px;
+    font-family: $font-primary;
+    width: 100%;
 }
+
+
 /* Create three unequal columns that floats next to each other */
+
 .column {
-  float: left;
-  padding: 10px;
+    float: left;
+    padding: 10px;
 }
+
 
 /* Left and right column */
+
 .column.side {
-  width: 25%;
+    width: 25%;
 }
+
 
 /* Middle column */
+
 .column.middle {
-  width: 50%;
+    width: 50%;
 }
+
 
 /* Clear floats after the columns */
+
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
+    .column.side,
+    .column.middle {
+        width: 100%;
+    }
 }

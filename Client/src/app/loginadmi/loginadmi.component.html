@@ -1,33 +1,62 @@
-<body>
-<div class="form1">
-    <h2>login</h2>
-    <form action="">
-        <p>Usuario</p>
-        <input type="text" [(ngModel)]="login.usuario" name="usuario" id="usuario" placeholder="Usuario">
-        <p>Contraseña</p>
-        <input type="password" [(ngModel)]="login.contrasena" name="contrasena" id="contrasena"
-            placeholder="Contraseña">
+<!-- <body>
+    <div class="form1">
+        <h2>login</h2>
+        <form action="">
+            <p>Usuario</p>
+            <input type="text" [(ngModel)]="login.usuario" name="usuario" id="usuario" placeholder="Usuario">
+            <p>Contraseña</p>
+            <input type="password" [(ngModel)]="login.contrasena" name="contrasena" id="contrasena" placeholder="Contraseña">
             <br>
             <br>
-        <input type="submit"  value="Enviar" (click)="datos(login) ; metodo()">
-    </form>
-</div>
-<h4>nuevo usuario</h4>
-<div>
-    <form>
-                <div>
-                        <p>Usuario</p>
-                    <input type="text" [(ngModel)]="usuario1" name="usuario1">
-                </div>
-                <br>
-                <div>
-                        <p>Contraseña</p>
-                    <input type="password" [(ngModel)]="contrasena1" name="contrasena1">
-                </div>
-                <br>
-        
+            <input type="submit" value="Enviar" (click)="datos(login) ; metodo()">
+        </form>
+    </div>
+    <h4>nuevo usuario</h4>
+    <div>
+        <form>
+            <div>
+                <p>Usuario</p>
+                <input type="text" [(ngModel)]="usuario1" name="usuario1">
+            </div>
+            <br>
+            <div>
+                <p>Contraseña</p>
+                <input type="password" [(ngModel)]="contrasena1" name="contrasena1">
+            </div>
+            <br>
+
             <br>
             <button (click)="post()">Registrarse</button>
-    </form>
+        </form>
+    </div>
+</body> -->
+<div class="login-wrap">
+    <div class="login-html">
+        <div class="images">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label class="label">Usuario</label>
+                        <input type="text" type="text" [(ngModel)]="login.usuario" name="usuario" id="usuario" placeholder="Usuario" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="contraseña" class="label">contraseña</label>
+                        <input type="password" [(ngModel)]="login.contrasena" name="contrasena" id="contrasena" placeholder="Contraseña" class="input">
+                    </div>
+
+                    <div class="group">
+                        <input type="button" class="button" type="submit" value="Enviar" (click)="datos(login) ; metodo()">
+                    </div>
+                    <div class="hr"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
-</body>
+<div class="image centrado">
+    <img src="../../assets/img/logo1.png" width="275" height="204">
+</div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -13,7 +14,7 @@ import { element } from 'protractor';
 export class ServicesComponent implements OnInit {
   response: any[]
   agregar:Patrones[]
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.getData()
@@ -27,12 +28,27 @@ export class ServicesComponent implements OnInit {
             console.log(this.response)
         })
   }
+  // carrito(id){
+  //   this.response.forEach(element=>{
+  //     if(element.id==id){
+  //       this.agregar.push(element.imagen);
+  //     }
+  //   });
+  // }
+
   carrito(id){
-    this.response.forEach(element=>{
-      if(element.id==id){
-        this.agregar.push(element.imagen);
+    let data
+    this.response.forEach(element =>{
+      if (element.id == id){
+        console.log(element);
+        this.agregar.push(element);
+        data = this.agregar
+        sessionStorage.setItem('Kawina-Patronaje', data)
+        this.router.navigate(['/carrito'])
+        console.log(this.agregar)
       }
-    });
+    })
   }
+
 
 }

@@ -81,9 +81,8 @@ let deleteDatos =(req,res)=>{
 
 let getData = (req,res)=>{
     let tabla = req.query.tabla
-    let id= req.query.id
     let campo = req.query.campo
-db.select(campo).returning(id).from(tabla)
+db.raw("SELECT * FROM inicio ORDER BY id DESC LIMIT 1")
     .then(response=>{
        return res.status(200).json({
         data:response,

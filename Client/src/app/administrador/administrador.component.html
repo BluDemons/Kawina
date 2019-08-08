@@ -1,4 +1,7 @@
 <body>
+    <h3>.</h3>
+    <h3>.</h3>
+    <h3>.</h3>
     <h3>Eliminar Patrones de diseño</h3>
     <div>
         <table class="table table-1">
@@ -10,18 +13,18 @@
                 <th>{{item.urlArchivo}}</th>
                 <th>{{item.imagen}}</th>
                 <th>{{item.idServicio}}</th>
-            <tbody>
-                <tr *ngFor="let item of response">
-                    <td>{{item.id}}</td>
-                    <td>{{item.nombre}}</td>
-                    <td>{{item.precio}}</td>
-                    <td>{{item.descripcion}}</td>
-                    <td><a href="data:application/zip;base64,{{item.urlArchivo}}">Archivo</a></td>
-                    <td><img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}"></td>
-                    <td>{{item.idServicio}}</td>
-                    <button (click)="eliminar(item.id)">Eliminar</button>
-                </tr>
-            </tbody>
+                <tbody>
+                    <tr *ngFor="let item of response">
+                        <td>{{item.id}}</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.precio}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td><a href="data:application/zip;base64,{{item.urlArchivo}}">Archivo</a></td>
+                        <td><img width="100" height="100" src="data:image/jpg;base64,{{item.imagen}}"></td>
+                        <td>{{item.idServicio}}</td>
+                        <button (click)="eliminar(item.id)">Eliminar</button>
+                    </tr>
+                </tbody>
         </table>
     </div>
     <h4>Ingresar Patrones De Diseño</h4>
@@ -30,33 +33,32 @@
             <tbody>
                 <tr>
                     <div>
-                        <label>nombre</label>
+                        <label>Nombre del Producto</label>
                         <div [formGroup]="registerForm1">
-                            <input type="text" formControlName="nombre" [(ngModel)]="nombre" name="nombre">
+                            <input type="text" class="input" formControlName="nombre" [(ngModel)]="nombre" name="nombre">
                         </div>
                     </div>
                     <div>
-                        <label>precio</label>
+                        <label>Precio</label>
                         <div [formGroup]="registerForm1">
                             <input type="number" [(ngModel)]="precio" formControlName="precio" name="precio">
                         </div>
                     </div>
                     <div>
-                        <label>descripcion</label>
+                        <label>Descripcion del producto</label>
                         <div [formGroup]="registerForm1">
-                            <input type="text" [(ngModel)]="descripcion" formControlName="descripcion"
-                                name="descripcion">
+                            <input type="text" [(ngModel)]="descripcion" formControlName="descripcion" name="descripcion">
                         </div>
                     </div>
                     <div>
-                        <label>urlArchivo</label>
+                        <label>Archivo ZIP</label>
                         <input type="file" (change)="handleFileSelect1($event)" [(ngModel)]="urlArchivo" name="urlArchivo">
                     </div>
                     <div>
-                        <label>imagen</label>
+                        <label>Imagen del producto</label>
                         <input type="file" (change)="handleFileSelect($event)" [(ngModel)]="imagen" name="imagen">
                     </div>
-                    <div   [formGroup]="registerForm1">
+                    <div [formGroup]="registerForm1">
                         <select [(ngModel)]="idServicio" formControlName="idServicio" name="select" id="">
                         <!-- <select [(ngModel)]="id3"> -->
                             <option >1</option>
@@ -64,7 +66,7 @@
                             <option >3</option>
                             <option >4</option>
                         </select>
-                          <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
+                        <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
                     </div>
                 </tr>
                 <button [disabled]="registerForm1.valid" (click)="postDataTable()">Ingresar Nuevo Patron</button>
@@ -125,24 +127,23 @@
                     <div>
                         <label>descripcion</label>
                         <div [formGroup]="registerForm2">
-                            <input type="text" [(ngModel)]="descripcion2" formControlName="descripcion2"
-                                name="descripcion2">
+                            <input type="text" [(ngModel)]="descripcion2" formControlName="descripcion2" name="descripcion2">
                         </div>
                     </div>
                     <div>
                         <label>imagen</label>
                         <input type="file" (change)="handleFileSelect2($event)" [(ngModel)]="imagen2" name="imagen2">
                     </div>
-                    <div   [formGroup]="registerForm2">
-                            <select [(ngModel)]="idServicio" formControlName="idServicio2" name="select" id="">
+                    <div [formGroup]="registerForm2">
+                        <select [(ngModel)]="idServicio" formControlName="idServicio2" name="select" id="">
                             <!-- <select [(ngModel)]="id3"> -->
                                 <option >1</option>
                                 <option >2</option>
                                 <option >3</option>
                                 <option >4</option>
                             </select>
-                              <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
-                        </div>
+                        <label>1: CONSULTORIA 2:CURSOS 3:PATRONAJE 4:BOLSOS</label>
+                    </div>
                 </tr>
                 <button (click)="postDataTableProductos()" [disabled]="registerForm2.valid">Ingresar Nuevo
                     Producto</button>

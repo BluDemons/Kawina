@@ -33,17 +33,11 @@ export class ProductComponent implements OnInit {
       })
   }
   carrito(id) {
-    let data
 
     this.response.forEach(element => {
       if (element.id == id) {
         // this.agregar= Array.of(element);
-        console.log(element);
         this.agregar.push(element);
-        data = this.agregar
-        sessionStorage.setItem('Kawina-Producto', data)
-        this.router.navigate(['/carrito'])
-        console.log(this.agregar)
       }
     });
   }

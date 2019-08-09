@@ -166,7 +166,7 @@ postDataTable = () => {
     // })
     Swal.fire("Datos Ingresados "," correctamente", 'success'); 
     })
-   window.location.reload()
+  //  window.location.reload()
 }
 
   postDataTableProductos = () => {
